@@ -196,6 +196,13 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Wavy SVG Divider */}
+        <div className="w-full overflow-hidden -mb-2">
+          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-12 md:h-20">
+            <path d="M0 40 Q 360 80 720 40 T 1440 40 V80 H0 V40Z" fill="#67e8f9" />
+          </svg>
+        </div>
+
         {/* Contact Section */}
         <section className="max-w-4xl mx-auto mb-20 md:mb-32">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-black">Kontakt</h2>
