@@ -85,7 +85,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-xl p-10 flex flex-col items-center text-center">
               <Image src="/ai.png" alt="Moderne" width={180} height={180} className="mb-6" />
               <div className="font-heading text-3xl mb-4 text-black">Moderne</div>
-              <div className="font-mono text-lg mb-2 text-black">Sme generácia, ktorá vyrástla na trendoch internetu. Čo je \"in\", pre nás nie je novinka, ale bežná súčasť života.</div>
+              <div className="font-mono text-lg mb-2 text-black">Sme generácia, ktorá vyrástla na trendoch internetu. Čo je &quot;in&quot;, pre nás nie je novinka, ale bežná súčasť života.</div>
             </div>
             {/* Card: Personalizácia */}
             <div className="bg-white rounded-2xl shadow-xl p-10 flex flex-col items-center text-center">

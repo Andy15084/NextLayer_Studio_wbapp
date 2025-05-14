@@ -1,17 +1,8 @@
-import { Kysely, PostgresDialect } from 'kysely';
+import { Kysely, PostgresDialect, sql } from 'kysely';
 import { Pool } from 'pg';
 
 // Database interface
-export interface Database {
-  // Add your table definitions here
-  // Example:
-  // users: {
-  //   id: number;
-  //   name: string;
-  //   email: string;
-  //   created_at: Date;
-  // }
-}
+export type Database = object;
 
 // Create a connection pool
 const pool = new Pool({
@@ -28,7 +19,7 @@ export const db = new Kysely<Database>({
 // Helper function to check database connection
 export async function checkDatabaseConnection() {
   try {
-    await db.executeQuery('SELECT 1');
+    await sql`SELECT 1`.execute(db);
     console.log('Database connection successful');
     return true;
   } catch (error) {
