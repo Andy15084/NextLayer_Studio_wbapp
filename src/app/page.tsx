@@ -6,7 +6,7 @@ import FloatingCard from "@/components/FloatingCard";
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen p-4 sm:p-8 bg-gradient-to-b from-cyan-100 to-white">
+      <main className="min-h-screen p-4 sm:p-8 bg-cyan-100">
         {/* Hero Section */}
         <section className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-8 md:gap-0 pt-16 md:pt-24 pb-12 md:pb-20">
           {/* Left Side */}
