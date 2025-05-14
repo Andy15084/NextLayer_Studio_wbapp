@@ -162,8 +162,8 @@ export default function Home() {
                 <button className="font-mono w-full px-4 py-2 border-2 border-black rounded-[16px] text-sm md:text-base hover:bg-black hover:text-white transition-colors text-black">
                   Pozrieť projekt
                 </button>
-              </a>
-            </div>
+          </a>
+        </div>
           </div>
           <div className="flex justify-center">
             <button className="font-mono px-6 py-2 md:px-8 md:py-3 border-2 border-black rounded-[16px] text-base md:text-lg hover:bg-black hover:text-white transition-colors text-black">
@@ -173,7 +173,7 @@ export default function Home() {
         </section>
 
         {/* About Us Section */}
-        <section className="max-w-4xl mx-auto mt-20 md:mt-32 mb-16 md:mb-24">
+        <section className="max-w-4xl mx-auto mt-20 md:mt-32 mb-10 sm:mb-16 md:mb-24">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-black">O nás</h2>
           <div className="font-mono text-sm sm:text-base mb-4 text-black">
             <TypewriterOnView text="Tím, ktorý tvorí vrstvu navyše" speed={20} showCursor={true} animatedDots={true} />
@@ -196,15 +196,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Wavy SVG Divider */}
-        <div className="w-full overflow-hidden -mb-2">
-          <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-12 md:h-20">
-            <path d="M0 40 Q 360 80 720 40 T 1440 40 V80 H0 V40Z" fill="#67e8f9" />
-          </svg>
-        </div>
-
         {/* Contact Section */}
-        <section className="max-w-4xl mx-auto mb-20 md:mb-32">
+        <section className="max-w-4xl mx-auto mt-10 sm:mt-16 md:mt-24 mb-20 md:mb-32">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-black">Kontakt</h2>
           <div className="font-mono text-sm sm:text-base mb-4 md:mb-6 text-black">Začnite svoju cestu s nami!<br />Stačí nás kontaktovať. Všetko ostatné už vyriešime spolu...</div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start">
@@ -247,41 +240,41 @@ export default function Home() {
         </section>
       </main>
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-black/50 pt-2 pb-1">
+      <footer className="bg-gray-50 border-t border-black/50 pt-1 pb-0.5">
         <div className="max-w-6xl mx-auto px-2 sm:px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 mb-4 md:mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 mb-2 md:mb-4">
             {/* Quick Links */}
             <div>
-              <div className="font-heading text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6">Rýchle odkazy</div>
-              <div className="font-mono text-base mb-2">Domov</div>
-              <div className="font-mono text-base mb-2">Prečo my</div>
-              <div className="font-mono text-base mb-2">Úspešné projekty</div>
-              <div className="font-mono text-base mb-2">Kontakt</div>
+              <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4">Rýchle odkazy</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Domov</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Prečo my</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Úspešné projekty</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Kontakt</div>
             </div>
             {/* Company Info */}
             <div>
-              <div className="font-heading text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6">Údaje o firme</div>
-              <div className="font-mono text-base mb-2">IČO: 56580894</div>
-              <div className="font-mono text-base mb-2">Číslo živnostenského registra: 140-35375</div>
-              <div className="font-mono text-base">Zapísaný v: Živnostenskom registri<br/>okresného úradu Senec</div>
+              <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4">Údaje o firme</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">IČO: 56580894</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Číslo živnostenského registra: 140-35375</div>
+              <div className="font-mono text-xs sm:text-sm">Zapísaný v: Živnostenskom registri<br/>okresného úradu Senec</div>
             </div>
             {/* What We Offer */}
             <div>
-              <div className="font-heading text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6">Čo ponúkame</div>
-              <div className="font-mono text-base mb-2">Správa sociálnych sietí</div>
-              <div className="font-mono text-base mb-2">Modernizácia vašej webstránky</div>
-              <div className="font-mono text-base mb-2">Vytvorenie digitálnej identity spoločnosti</div>
-              <div className="font-mono text-base mb-2">Tvorba eshopu</div>
-              <div className="font-mono text-base mb-2">Tvorba webových aplikácii</div>
+              <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4">Čo ponúkame</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Správa sociálnych sietí</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Modernizácia vašej webstránky</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Vytvorenie digitálnej identity spoločnosti</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Tvorba eshopu</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">Tvorba webových aplikácii</div>
             </div>
             {/* Contact */}
             <div>
-              <div className="font-heading text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6">Kontakt</div>
-              <div className="font-mono text-base mb-2">email: nextlayerstudio@gmail.com</div>
-              <div className="font-mono text-base mb-2">tel.: 0903652258</div>
+              <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4">Kontakt</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">email: nextlayerstudio@gmail.com</div>
+              <div className="font-mono text-xs sm:text-sm mb-1">tel.: 0903652258</div>
             </div>
           </div>
-          <div className="text-center font-mono text-sm sm:text-base text-black/80 mt-4 md:mt-6">
+          <div className="text-center font-mono text-xs sm:text-sm text-black/80 mt-4 md:mt-6">
             © 2024 NextLayer Studio s.r.o Všetky práva vyhradené.
           </div>
         </div>
