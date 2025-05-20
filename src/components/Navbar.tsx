@@ -5,26 +5,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const services = [
-  { name: 'Tvorba eshopu', href: '/sluzby/eshop' },
-  { name: 'Tvorba webových aplikácii', href: '/sluzby/webove-aplikacie' },
-  { name: 'Tvorba digitálnej identity', href: '/sluzby/digitalna-identita' },
+  { name: 'Tvorba eshopu', href: '/eshop' },
+  { name: 'Tvorba webových aplikácii', href: '/webove-aplikacie' },
   { name: 'Modernizácia webstránky', href: '/sluzby/modernizacia' },
-  { name: 'Automatizácia a priemyselné aplikácie', href: '/sluzby/automatizacia' },
-  { name: 'Správa sociálnch sietí a online marketing', href: '/sluzby/marketing' },
+  { name: 'Automatizácia a priemyselné riešenia', href: '/sluzby/automatizacia' },
 ];
 
-const about = [
-  { name: 'O nás', href: '/o-nas' },
+const languages = [
+  { code: 'sk', name: 'SK', fullName: 'Slovenský' },
+  { code: 'de', name: 'DE', fullName: 'Deutsch' },
+  { code: 'cs', name: 'CS', fullName: 'Čeština' },
+  { code: 'en', name: 'EN', fullName: 'English' },
 ];
 
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('sk');
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
   const aboutTimeout = useRef<NodeJS.Timeout | null>(null);
+  const languageTimeout = useRef<NodeJS.Timeout | null>(null);
 
   // Scroll handler for auto-hide/show
   useEffect(() => {
@@ -59,6 +63,22 @@ export default function Navbar() {
     aboutTimeout.current = setTimeout(() => setIsAboutOpen(false), 200);
   };
 
+  const handleLanguageEnter = () => {
+    if (languageTimeout.current) clearTimeout(languageTimeout.current);
+    setIsLanguageOpen(true);
+  };
+
+  const handleLanguageLeave = () => {
+    languageTimeout.current = setTimeout(() => setIsLanguageOpen(false), 200);
+  };
+
+  const handleLanguageChange = (code: string) => {
+    setCurrentLanguage(code);
+    setIsLanguageOpen(false);
+    // Here you would typically implement the actual language change logic
+    // For example, using next-intl or similar internationalization library
+  };
+
   return (
     <nav
       className={`w-[80%] mx-auto bg-white rounded-b-xl shadow-md fixed left-1/2 -translate-x-1/2 z-50 transition-transform duration-300 ${
@@ -70,39 +90,31 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center h-10">
-            <div className="relative w-32 h-8">
-              <Image
-                src="/logo-placeholder.svg"
-                alt="NextLayer Studio Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Link href="/">
+              <div className="relative w-32 h-8 cursor-pointer">
+                <Image
+                  src="/logo-placeholder.svg"
+                  alt="NextLayer Studio Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
-              <Link
-                href="/"
-                className="font-heading text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Domov
-              </Link>
-
-              {/* Services Dropdown */}
               <div className="relative">
                 <button
                   onMouseEnter={handleServicesEnter}
                   onMouseLeave={handleServicesLeave}
-                  className="font-heading text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center"
+                  className="bg-[#219EBC] text-white border-2 border-[#219EBC] hover:bg-[#0353a4] hover:border-[#0353a4] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
                 >
-                  Čo ponúkame
+                  Web riešenia
                   <svg
-                    className={`ml-2 h-4 w-4 transition-transform ${
-                      isServicesOpen ? 'rotate-180' : ''
-                    }`}
+                    className={`ml-2 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -115,8 +127,6 @@ export default function Navbar() {
                     />
                   </svg>
                 </button>
-
-                {/* Dropdown Menu */}
                 {isServicesOpen && (
                   <div
                     onMouseEnter={handleServicesEnter}
@@ -138,6 +148,15 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
+
+              <a
+                href="https://www.cutout.pro/blur-background"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#FF9800] hover:bg-[#FFB300] text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
+              >
+                Marketing
+              </a>
 
               {/* About Dropdown */}
               <div className="relative">
@@ -170,16 +189,19 @@ export default function Navbar() {
                     className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
                   >
                     <div className="py-1 divide-y divide-gray-200" role="menu">
-                      {about.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-heading"
-                          role="menuitem"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
+                      <Link
+                        href="/preco-my"
+                        className="font-heading text-gray-700 hover:text-gray-900 block px-4 py-2 text-sm"
+                      >
+                        Prečo práve my
+                      </Link>
+                      <Link
+                        href="/o-nas"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-heading"
+                        role="menuitem"
+                      >
+                        O nás
+                      </Link>
                     </div>
                   </div>
                 )}
@@ -198,6 +220,57 @@ export default function Navbar() {
               >
                 Kontakt
               </Link>
+
+              {/* Language Selector */}
+              <div className="relative">
+                <button
+                  onMouseEnter={handleLanguageEnter}
+                  onMouseLeave={handleLanguageLeave}
+                  className="font-heading text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center"
+                >
+                  {languages.find(lang => lang.code === currentLanguage)?.name || 'SK'}
+                  <svg
+                    className={`ml-2 h-4 w-4 transition-transform ${
+                      isLanguageOpen ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {isLanguageOpen && (
+                  <div
+                    onMouseEnter={handleLanguageEnter}
+                    onMouseLeave={handleLanguageLeave}
+                    className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
+                  >
+                    <div className="py-1 divide-y divide-gray-200" role="menu">
+                      {languages.map((language) => (
+                        <button
+                          key={language.code}
+                          onClick={() => handleLanguageChange(language.code)}
+                          className={`block w-full text-left px-4 py-2 text-sm ${
+                            currentLanguage === language.code
+                              ? 'bg-gray-100 text-gray-900'
+                              : 'text-gray-700 hover:bg-gray-100'
+                          } font-heading`}
+                          role="menuitem"
+                        >
+                          <span className="font-bold mr-2">{language.name}</span>
+                          {language.fullName}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
@@ -234,20 +307,25 @@ export default function Navbar() {
       {/* Mobile menu, show/hide based on menu state */}
       <div className={`md:hidden ${mobileMenuOpen ? '' : 'hidden'}`} id="mobile-menu">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link
-            href="/"
-            className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Domov
-          </Link>
-
-          {/* Mobile Services Dropdown */}
           <div className="relative">
             <button
-              className="font-heading text-gray-700 hover:text-gray-900 block w-full text-left px-3 py-2 rounded-md text-base font-medium"
+              className="bg-[#023047] text-white border-2 border-[#023047] hover:bg-[#0353a4] hover:border-[#0353a4] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
-              Čo ponúkame
+              Web riešenia
+              <svg
+                className={`ml-2 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </button>
             {isServicesOpen && (
               <div className="pl-4 space-y-1">
@@ -264,6 +342,15 @@ export default function Navbar() {
             )}
           </div>
 
+          <a
+            href="https://www.cutout.pro/blur-background"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#FF9800] hover:bg-[#FFB300] text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
+          >
+            Marketing
+          </a>
+
           {/* Mobile About Dropdown */}
           <div className="relative">
             <button
@@ -274,15 +361,18 @@ export default function Navbar() {
             </button>
             {isAboutOpen && (
               <div className="pl-4 space-y-1">
-                {about.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                <Link
+                  href="/preco-my"
+                  className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-sm"
+                >
+                  Prečo práve my
+                </Link>
+                <Link
+                  href="/o-nas"
+                  className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-sm"
+                >
+                  O nás
+                </Link>
               </div>
             )}
           </div>
@@ -300,6 +390,34 @@ export default function Navbar() {
           >
             Kontakt
           </Link>
+
+          {/* Mobile Language Selector */}
+          <div className="relative">
+            <button
+              className="font-heading text-gray-700 hover:text-gray-900 block w-full text-left px-3 py-2 rounded-md text-base font-medium"
+              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+            >
+              Jazyk / Language
+            </button>
+            {isLanguageOpen && (
+              <div className="pl-4 space-y-1">
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={() => handleLanguageChange(language.code)}
+                    className={`block w-full text-left px-3 py-2 rounded-md text-sm ${
+                      currentLanguage === language.code
+                        ? 'bg-gray-100 text-gray-900'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    } font-heading`}
+                  >
+                    <span className="font-bold mr-2">{language.name}</span>
+                    {language.fullName}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
