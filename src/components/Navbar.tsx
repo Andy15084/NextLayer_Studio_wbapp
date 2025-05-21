@@ -150,7 +150,7 @@ export default function Navbar() {
               </div>
 
               <a
-                href="https://www.cutout.pro/blur-background"
+                href="https://next-layer-studio-marketing.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#FF9800] hover:bg-[#FFB300] text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
@@ -343,7 +343,7 @@ export default function Navbar() {
           </div>
 
           <a
-            href="https://www.cutout.pro/blur-background"
+            href="https://next-layer-studio-marketing.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#FF9800] hover:bg-[#FFB300] text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
