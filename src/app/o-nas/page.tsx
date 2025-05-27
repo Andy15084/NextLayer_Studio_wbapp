@@ -1,5 +1,4 @@
 'use client';
-import { useState, useEffect } from 'react';
 import TypewriterOnView from '@/components/TypewriterOnView';
 import Image from 'next/image';
 import FloatingCard from '@/components/FloatingCard';
