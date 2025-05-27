@@ -1,7 +1,7 @@
 "use client";
 import { useState, ButtonHTMLAttributes } from "react";
 
-type ButtonVariant = 'primary' | 'secondary';
+type ButtonVariant = 'primary' | 'secondary' | 'marketing';
 
 interface PaletteButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -18,19 +18,19 @@ export default function PaletteButton({
   const [hover, setHover] = useState(false);
 
   const getStyles = () => {
-    if (variant === 'secondary') {
+    if (variant === 'marketing') {
       return {
-        background: hover ? '#023047' : '#FFB703',
-        border: '2px solid #FFB703',
-        color: hover ? 'white' : '#023047',
+        background: hover ? '#00e6c7' : '#00ffdd',
+        border: '2px solid #00ffdd',
+        color: '#023047',
       };
     }
     
-    // Default primary style
+    // Both primary and secondary use yellow style now
     return {
-      background: hover ? '#FB8500' : '#219EBC',
-      border: '2px solid #219EBC',
-      color: 'white',
+      background: hover ? '#023047' : '#FFB703',
+      border: '2px solid #FFB703',
+      color: hover ? 'white' : '#023047',
     };
   };
 

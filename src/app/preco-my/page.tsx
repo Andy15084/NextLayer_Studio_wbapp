@@ -65,7 +65,7 @@ export default function PrecoMyPage() {
           {precoMyCards.map((card, idx) => (
             <div key={card.title}>
               <div
-                className={`group bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-center text-center transition-shadow duration-300 cursor-pointer min-h-[220px] md:min-h-[260px] relative
+                className={`group bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-center text-center transition-shadow duration-300 cursor-pointer min-h-[220px] md:min-h-[260px] relative overflow-hidden
                   ${expanded === idx ? 'scale-105 z-10 shadow-2xl border-2 border-[#219EBC]' : 'hover:shadow-2xl hover:border-2 hover:border-[#219EBC]'}
                   hover:animate-bounce-slight`}
                 onClick={() => setExpanded(expanded === idx ? null : idx)}
@@ -73,18 +73,14 @@ export default function PrecoMyPage() {
               >
                 <Image src={card.img} alt={card.alt} width={120} height={120} className="mb-4 md:mb-6 w-20 md:w-44 h-auto" />
                 <div className="font-heading text-xl md:text-3xl mb-2 md:mb-4 text-[#023047]">{card.title}</div>
-                <div className="font-mono text-base mb-2 text-black">
+                <div className={`font-mono text-base mb-2 text-black ${expanded === idx ? '' : 'text-fade-bottom'}`}>
                   {expanded === idx ? card.long : card.short}
                 </div>
-                {/* Animated chevron/plus icon */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center">
-                  <span
-                    className={`inline-block transition-transform duration-300 ${expanded === idx ? 'rotate-180' : 'animate-pulse'} text-[#219EBC]`}
-                    style={{ fontSize: 28 }}
-                  >
-                    ▼
-                  </span>
-                </div>
+                {expanded !== idx && (
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white via-white to-transparent pointer-events-none flex items-end justify-center pb-2">
+                    <span className="text-[#219EBC] text-sm font-semibold animate-pulse">Kliknite pre viac...</span>
+                  </div>
+                )}
                 <span className="sr-only">Kliknite pre viac informácií</span>
               </div>
             </div>
@@ -101,6 +97,13 @@ export default function PrecoMyPage() {
         }
         .animate-bounce-slight {
           animation: bounce-slight 0.7s;
+        }
+        .text-fade-bottom {
+          position: relative;
+          max-height: 70px;
+          overflow: hidden;
+          mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+          -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
         }
       `}</style>
     </main>

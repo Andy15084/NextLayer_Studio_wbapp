@@ -1,3 +1,5 @@
+'use client';
+import { useState, useEffect } from 'react';
 import TypewriterOnView from '@/components/TypewriterOnView';
 import Image from 'next/image';
 import FloatingCard from '@/components/FloatingCard';
@@ -6,16 +8,29 @@ export default function AboutUs() {
   return (
     <main className="p-4 sm:p-8 relative z-10" style={{ background: '#8ECAE6' }}>
       <section className="max-w-7xl mx-auto mt-20 md:mt-32 mb-10 sm:mb-16 md:mb-24">
-        <div className="mb-12 ml-0 md:ml-32">
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#023047] leading-tight">
-            Čo je
-            <br />
-            NextLayer
-            <br />
-            Studio
-          </h1>
-          <div className="font-mono text-base sm:text-lg mt-8 text-[#023047]">
-            <TypewriterOnView text="Tím, ktorý tvorí vrstvu navyše" speed={15} showCursor={true} animatedDots={true} />
+        <div className="mb-12 ml-0 md:ml-32 flex flex-col md:flex-row items-start gap-8">
+          <div>
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#023047] leading-tight">
+              Čo je
+              <br />
+              NextLayer
+              <br />
+              Studio
+            </h1>
+            <div className="font-mono text-base sm:text-lg mt-8 text-[#023047]">
+              <TypewriterOnView text="Tím, ktorý tvorí vrstvu navyše" speed={15} showCursor={true} animatedDots={true} />
+            </div>
+          </div>
+          
+          <div className="relative w-full md:w-[600px] h-[400px] md:h-[600px] flex-shrink-0 mt-4 md:-mt-16 flex items-center justify-center">
+            <Image
+              src="/logoyellow.png"
+              alt="NextLayer Studio Logo"
+              width={1000}
+              height={1000}
+              className="w-full h-full object-contain"
+              priority
+            />
           </div>
         </div>
 
@@ -124,6 +139,25 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <style jsx global>{`
+        @keyframes bounce-slight {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
+        .animate-bounce-slight {
+          animation: bounce-slight 0.7s;
+        }
+        .text-fade-bottom {
+          position: relative;
+          max-height: 70px;
+          overflow: hidden;
+          mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+          -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+        }
+        .custom-duration {
+          transition-duration: 3000ms;
+        }
+      `}</style>
     </main>
   );
 } 

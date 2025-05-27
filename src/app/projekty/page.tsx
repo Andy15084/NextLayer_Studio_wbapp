@@ -1,7 +1,10 @@
+"use client";
+
 import Image from 'next/image';
 import AnimatedOnScroll from '@/components/AnimatedOnScroll';
 import PaletteButton from '@/components/PaletteButton';
 import Link from 'next/link';
+import { useState } from 'react';
 
 // Sample project data - in a real app, this would come from a CMS or API
 const projects = [
@@ -56,6 +59,13 @@ const projects = [
 ];
 
 export default function ProjektyPage() {
+  const [activeFilter, setActiveFilter] = useState('Všetky');
+  
+  // Filter projects based on active filter
+  const filteredProjects = activeFilter === 'Všetky' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
+
   return (
     <main className="p-4 sm:p-8 relative z-10" style={{ background: '#8ECAE6' }}>
       {/* Hero Section */}
@@ -76,19 +86,34 @@ export default function ProjektyPage() {
       {/* Project Categories */}
       <section className="max-w-7xl mx-auto mb-16 md:mb-20">
         <div className="flex flex-wrap gap-2 md:gap-4">
-          <button className="font-mono px-4 py-2 bg-[#023047] text-white rounded-md transition-colors">
+          <button 
+            className={`font-mono px-4 py-2 rounded-md transition-colors ${activeFilter === 'Všetky' ? 'bg-[#023047] text-white' : 'bg-white text-[#023047] hover:bg-[#023047] hover:text-white'}`}
+            onClick={() => setActiveFilter('Všetky')}
+          >
             Všetky
           </button>
-          <button className="font-mono px-4 py-2 bg-white text-[#023047] hover:bg-[#023047] hover:text-white rounded-md transition-colors">
+          <button 
+            className={`font-mono px-4 py-2 rounded-md transition-colors ${activeFilter === 'Web Development' ? 'bg-[#023047] text-white' : 'bg-white text-[#023047] hover:bg-[#023047] hover:text-white'}`}
+            onClick={() => setActiveFilter('Web Development')}
+          >
             Web Development
           </button>
-          <button className="font-mono px-4 py-2 bg-white text-[#023047] hover:bg-[#023047] hover:text-white rounded-md transition-colors">
+          <button 
+            className={`font-mono px-4 py-2 rounded-md transition-colors ${activeFilter === 'E-commerce' ? 'bg-[#023047] text-white' : 'bg-white text-[#023047] hover:bg-[#023047] hover:text-white'}`}
+            onClick={() => setActiveFilter('E-commerce')}
+          >
             E-commerce
           </button>
-          <button className="font-mono px-4 py-2 bg-white text-[#023047] hover:bg-[#023047] hover:text-white rounded-md transition-colors">
+          <button 
+            className={`font-mono px-4 py-2 rounded-md transition-colors ${activeFilter === 'Aplikácie' ? 'bg-[#023047] text-white' : 'bg-white text-[#023047] hover:bg-[#023047] hover:text-white'}`}
+            onClick={() => setActiveFilter('Aplikácie')}
+          >
             Aplikácie
           </button>
-          <button className="font-mono px-4 py-2 bg-white text-[#023047] hover:bg-[#023047] hover:text-white rounded-md transition-colors">
+          <button 
+            className={`font-mono px-4 py-2 rounded-md transition-colors ${activeFilter === 'Marketing' ? 'bg-[#023047] text-white' : 'bg-white text-[#023047] hover:bg-[#023047] hover:text-white'}`}
+            onClick={() => setActiveFilter('Marketing')}
+          >
             Marketing
           </button>
         </div>
@@ -97,7 +122,7 @@ export default function ProjektyPage() {
       {/* Projects Grid */}
       <section className="max-w-7xl mx-auto mb-16 md:mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <AnimatedOnScroll 
               key={project.id} 
               animation="fade-up" 

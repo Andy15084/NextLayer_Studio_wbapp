@@ -89,15 +89,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center h-10">
+          <div className="flex-shrink-0 flex items-center">
             <Link href="/">
-              <div className="relative w-32 h-8 cursor-pointer">
+              <div className="relative w-40 h-10 cursor-pointer flex items-center">
                 <Image
-                  src="/logo-placeholder.svg"
+                  src="/logoblack.png"
                   alt="NextLayer Studio Logo"
-                  fill
+                  width={160}
+                  height={40}
                   className="object-contain"
                   priority
+                  quality={100}
                 />
               </div>
             </Link>
@@ -110,7 +112,7 @@ export default function Navbar() {
                 <button
                   onMouseEnter={handleServicesEnter}
                   onMouseLeave={handleServicesLeave}
-                  className="bg-[#219EBC] text-white border-2 border-[#219EBC] hover:bg-[#0353a4] hover:border-[#0353a4] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
+                  className="bg-[#FFB703] text-[#023047] border-2 border-[#FFB703] hover:bg-[#023047] hover:border-[#023047] hover:text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
                 >
                   Web riešenia
                   <svg
@@ -153,7 +155,7 @@ export default function Navbar() {
                 href="https://next-layer-studio-marketing.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#FF9800] hover:bg-[#FFB300] text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
+                className="bg-[#00ffdd] hover:bg-[#00e6c7] text-[#023047] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
               >
                 Marketing
               </a>
@@ -274,8 +276,56 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile Language Selector - Always visible */}
+          <div className="flex items-center md:hidden">
+            <div className="relative mr-2">
+              <button
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                className="font-heading text-gray-700 hover:text-gray-900 px-2 py-1 rounded-md text-sm font-medium inline-flex items-center"
+              >
+                {languages.find(lang => lang.code === currentLanguage)?.name || 'SK'}
+                <svg
+                  className={`ml-1 h-4 w-4 transition-transform ${
+                    isLanguageOpen ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {isLanguageOpen && (
+                <div
+                  className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50"
+                >
+                  <div className="py-1 divide-y divide-gray-200" role="menu">
+                    {languages.map((language) => (
+                      <button
+                        key={language.code}
+                        onClick={() => handleLanguageChange(language.code)}
+                        className={`block w-full text-left px-4 py-2 text-sm ${
+                          currentLanguage === language.code
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700 hover:bg-gray-100'
+                        } font-heading`}
+                        role="menuitem"
+                      >
+                        <span className="font-bold mr-2">{language.name}</span>
+                        {language.fullName}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile menu button */}
             <button
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
@@ -309,7 +359,7 @@ export default function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <div className="relative">
             <button
-              className="bg-[#023047] text-white border-2 border-[#023047] hover:bg-[#0353a4] hover:border-[#0353a4] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
+              className="bg-[#FFB703] text-[#023047] border-2 border-[#FFB703] hover:bg-[#023047] hover:border-[#023047] hover:text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
               Web riešenia
@@ -346,7 +396,7 @@ export default function Navbar() {
             href="https://next-layer-studio-marketing.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#FF9800] hover:bg-[#FFB300] text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
+            className="bg-[#00ffdd] hover:bg-[#00e6c7] text-[#023047] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
           >
             Marketing
           </a>
@@ -390,34 +440,6 @@ export default function Navbar() {
           >
             Kontakt
           </Link>
-
-          {/* Mobile Language Selector */}
-          <div className="relative">
-            <button
-              className="font-heading text-gray-700 hover:text-gray-900 block w-full text-left px-3 py-2 rounded-md text-base font-medium"
-              onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-            >
-              Jazyk / Language
-            </button>
-            {isLanguageOpen && (
-              <div className="pl-4 space-y-1">
-                {languages.map((language) => (
-                  <button
-                    key={language.code}
-                    onClick={() => handleLanguageChange(language.code)}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-sm ${
-                      currentLanguage === language.code
-                        ? 'bg-gray-100 text-gray-900'
-                        : 'text-gray-700 hover:bg-gray-100'
-                    } font-heading`}
-                  >
-                    <span className="font-bold mr-2">{language.name}</span>
-                    {language.fullName}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </nav>
