@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="w-full py-8" style={{ background: '#023047', borderTop: '2px solid #219EBC' }}>
@@ -6,10 +8,12 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4 text-white">Rýchle odkazy</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Domov</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Prečo my</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Úspešné projekty</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Kontakt</div>
+            <Link href="/" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Domov</Link>
+            <Link href="/preco-my" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Prečo práve my</Link>
+            <Link href="/o-nas" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">O nás</Link>
+            <Link href="/projekty" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Úspešné projekty</Link>
+            <Link href="/kontakt" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Kontakt</Link>
+            <a href="https://next-layer-studio-marketing.vercel.app" target="_blank" rel="noopener noreferrer" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#00ffdd] transition-colors">Marketing</a>
           </div>
           {/* Company Info */}
           <div>
@@ -21,17 +25,16 @@ export default function Footer() {
           {/* What We Offer */}
           <div>
             <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4 text-white">Čo ponúkame</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Správa sociálnych sietí</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Modernizácia vašej webstránky</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Vytvorenie digitálnej identity spoločnosti</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Tvorba eshopu</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">Tvorba webových aplikácii</div>
+            <Link href="/eshop" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Tvorba eshopu</Link>
+            <Link href="/webove-aplikacie" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Tvorba webových aplikácii</Link>
+            <Link href="/sluzby/modernizacia" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Modernizácia webstránky</Link>
+            <Link href="/sluzby/automatizacia" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">Automatizácia a priemyselné riešenia</Link>
           </div>
           {/* Contact */}
           <div>
             <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4 text-white">Kontakt</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">email: nextlayerstudio@gmail.com</div>
-            <div className="font-mono text-xs sm:text-sm mb-1 text-white">tel.: 0903652258</div>
+            <a href="mailto:nextlayerstudio@gmail.com" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">email: nextlayerstudio@gmail.com</a>
+            <a href="tel:0903652258" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">tel.: 0903 652 258</a>
           </div>
         </div>
         <div className="text-center font-mono text-xs sm:text-sm text-white mt-4 md:mt-6">

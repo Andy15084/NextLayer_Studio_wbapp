@@ -6,56 +6,32 @@ import PaletteButton from '@/components/PaletteButton';
 import Link from 'next/link';
 import { useState } from 'react';
 
-// Sample project data - in a real app, this would come from a CMS or API
+// Real project data
 const projects = [
   {
-    id: 'projekt-1',
-    title: 'Názov projektu 1',
+    id: 'karinart',
+    title: 'Karin Art Tattoo',
     category: 'Web Development',
-    description: 'Modernizácia webu pre firmu v oblasti tetovania. Kompletný redizajn a implementácia responzívneho rozhrania.',
-    image: '/modernizaciawebstranky.png',
-    url: '#'
+    description: 'Moderný, elegantný web pre tetovací salón v Bratislave s dôrazom na prezentáciu portfólia umeleckých diel a jednoduchú komunikáciu s klientmi.',
+    image: '/karinart.png',
+    url: 'https://www.karinart.sk'
   },
   {
-    id: 'projekt-2',
-    title: 'Názov projektu 2',
-    category: 'E-commerce',
-    description: 'Vytvorenie komplexného e-shopu s online platbami a integráciou skladu pre lokálneho predajcu potravín.',
-    image: '/eshop illustration.png',
-    url: '#'
-  },
-  {
-    id: 'projekt-3',
-    title: 'Názov projektu 3',
-    category: 'Aplikácie',
-    description: 'Vývoj mobilnej aplikácie pre správu rezervácií a objednávok v sieti reštaurácií.',
-    image: '/tvorbawebovychaplikacii.png',
-    url: '#'
-  },
-  {
-    id: 'projekt-4',
-    title: 'Názov projektu 4',
-    category: 'Marketing',
-    description: 'Komplexná marketingová stratégia a implementácia pre startup v oblasti vzdelávania.',
-    image: '/marketing.png',
-    url: '#'
-  },
-  {
-    id: 'projekt-5',
-    title: 'Názov projektu 5',
+    id: 'natusvolare',
+    title: 'Natus Volare',
     category: 'Web Development',
-    description: 'Korporátny web pre medzinárodnú spoločnosť s viacjazyčnou podporou a integrovanými nástrojmi.',
-    image: '/precomodernizovat webstranku.png',
-    url: '#'
+    description: 'Dynamický web pre spoločnosť špecializujúcu sa na dronové služby, ktorý efektívne prezentuje široké spektrum služieb od filmovania po termálne inšpekcie.',
+    image: '/natusvolare.png',
+    url: 'https://misk0o.github.io/Natus-Volare/'
   },
   {
-    id: 'projekt-6',
-    title: 'Názov projektu 6',
-    category: 'Aplikácie',
-    description: 'Interná aplikácia pre správu projektov a komunikáciu tímu s vlastným CMS riešením.',
-    image: '/čojevebovaaplikacia.png',
-    url: '#'
-  },
+    id: 'portfolio',
+    title: 'Developer Portfolio',
+    category: 'Web Development',
+    description: 'Minimalistické a elegantné portfólio pre vývojára, ktoré efektívne prezentuje jeho zručnosti, projekty a profesionálne skúsenosti s dôrazom na čistý dizajn.',
+    image: '/portfolio.png',
+    url: 'https://my-portfolio-delta-sandy-33.vercel.app'
+  }
 ];
 
 export default function ProjektyPage() {
@@ -130,13 +106,13 @@ export default function ProjektyPage() {
               className="h-full"
             >
               <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-start h-full transition-transform duration-200 hover:scale-105">
-                <div className="w-full h-40 md:h-48 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
-                  {/* Use actual images from public folder */}
+                <div className="w-full h-40 md:h-48 rounded-xl mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
                   <Image 
                     src={project.image} 
                     alt={project.title} 
-                    fill 
-                    className="object-cover" 
+                    width={600}
+                    height={350}
+                    className="object-cover w-full h-full" 
                   />
                 </div>
                 
@@ -146,11 +122,11 @@ export default function ProjektyPage() {
                   <div className="font-mono text-sm md:text-base mb-6 text-black">{project.description}</div>
                 </div>
                 
-                <Link href={project.url} className="w-full mt-auto">
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className="w-full mt-auto">
                   <button className="font-mono w-full px-4 py-2 bg-[#FFB703] border-2 border-[#FFB703] rounded-[16px] text-sm md:text-base hover:bg-[#023047] hover:text-white hover:border-[#023047] transition-colors text-[#023047]">
                     Pozrieť projekt
                   </button>
-                </Link>
+                </a>
               </div>
             </AnimatedOnScroll>
           ))}
@@ -224,23 +200,23 @@ export default function ProjektyPage() {
             
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
-                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">95%</div>
-                <p className="font-mono text-sm text-[#023047]">spokojných klientov</p>
+                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">100%</div>
+                <p className="font-mono text-sm text-[#023047]">responzívne weby</p>
               </div>
               
               <div className="text-center">
-                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">50+</div>
-                <p className="font-mono text-sm text-[#023047]">dokončených projektov</p>
+                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">65%</div>
+                <p className="font-mono text-sm text-[#023047]">vyššia návštevnosť</p>
               </div>
               
               <div className="text-center">
-                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">40%</div>
-                <p className="font-mono text-sm text-[#023047]">nárast konverzií</p>
+                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">85%</div>
+                <p className="font-mono text-sm text-[#023047]">zlepšenie SEO</p>
               </div>
               
               <div className="text-center">
-                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">2x</div>
-                <p className="font-mono text-sm text-[#023047]">rýchlejšie načítanie</p>
+                <div className="font-heading text-4xl md:text-5xl font-bold text-[#FFB703] mb-2">3x</div>
+                <p className="font-mono text-sm text-[#023047]">vyššia konverzia</p>
               </div>
             </div>
           </div>

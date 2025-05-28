@@ -356,10 +356,10 @@ export default function Navbar() {
 
       {/* Mobile menu, show/hide based on menu state */}
       <div className={`md:hidden ${mobileMenuOpen ? '' : 'hidden'}`} id="mobile-menu">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="px-2 pt-2 pb-3 space-y-4 sm:px-3">
           <div className="relative">
             <button
-              className="bg-[#FFB703] text-[#023047] border-2 border-[#FFB703] hover:bg-[#023047] hover:border-[#023047] hover:text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
+              className="bg-[#FFB703] text-[#023047] border-2 border-[#FFB703] hover:bg-[#023047] hover:border-[#023047] hover:text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center w-full justify-between"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
               Web riešenia
@@ -378,7 +378,7 @@ export default function Navbar() {
               </svg>
             </button>
             {isServicesOpen && (
-              <div className="pl-4 space-y-1">
+              <div className="pl-4 space-y-2 mt-2">
                 {services.map((service) => (
                   <Link
                     key={service.href}
@@ -396,7 +396,7 @@ export default function Navbar() {
             href="https://next-layer-studio-marketing.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#00ffdd] hover:bg-[#00e6c7] text-[#023047] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
+            className="bg-[#00ffdd] hover:bg-[#00e6c7] text-[#023047] font-heading px-5 py-3 rounded-md text-sm font-bold shadow transition w-full block text-center"
           >
             Marketing
           </a>
@@ -404,13 +404,13 @@ export default function Navbar() {
           {/* Mobile About Dropdown */}
           <div className="relative">
             <button
-              className="font-heading text-gray-700 hover:text-gray-900 block w-full text-left px-3 py-2 rounded-md text-base font-medium"
+              className="font-heading text-gray-700 hover:text-gray-900 block w-full text-left px-3 py-3 rounded-md text-base font-medium"
               onClick={() => setIsAboutOpen(!isAboutOpen)}
             >
               Prečo my
             </button>
             {isAboutOpen && (
-              <div className="pl-4 space-y-1">
+              <div className="pl-4 space-y-2 mt-1">
                 <Link
                   href="/preco-my"
                   className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-sm"
@@ -429,14 +429,14 @@ export default function Navbar() {
 
           <Link
             href="/projekty"
-            className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+            className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-3 rounded-md text-base font-medium"
           >
             Úspešné projekty
           </Link>
 
           <Link
             href="/kontakt"
-            className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+            className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-3 rounded-md text-base font-medium"
           >
             Kontakt
           </Link>

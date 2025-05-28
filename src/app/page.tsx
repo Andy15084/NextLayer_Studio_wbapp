@@ -50,27 +50,27 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
             {/* Card 1 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[220px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="font-heading text-base md:text-lg font-bold mb-2 text-[#023047]">Konzultácia a pochopenie Vašich cieľov</div>
-              <div className="font-mono text-xs md:text-sm mb-4 text-black">Spoznáme Vašu značku, potreby a Vaše sny</div>
+            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-10 flex flex-col items-start min-h-[180px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
+              <div className="font-heading text-base md:text-lg font-bold mb-1 md:mb-2 text-[#023047]">Konzultácia a pochopenie Vašich cieľov</div>
+              <div className="font-mono text-xs md:text-sm mb-2 md:mb-4 text-black">Spoznáme Vašu značku, potreby a Vaše sny</div>
               <div className="mt-auto font-heading text-xl md:text-2xl text-gray-400">1</div>
             </FloatingCard>
             {/* Card 2 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[220px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="font-heading text-base md:text-lg font-bold mb-2 text-[#023047]">Návrh a dizajn</div>
-              <div className="font-mono text-xs md:text-sm mb-4 text-black">Navrhneme Vám jedinečný vzhľad a štruktúru šitú na mieru</div>
+            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-10 flex flex-col items-start min-h-[180px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
+              <div className="font-heading text-base md:text-lg font-bold mb-1 md:mb-2 text-[#023047]">Návrh a dizajn</div>
+              <div className="font-mono text-xs md:text-sm mb-2 md:mb-4 text-black">Navrhneme Vám jedinečný vzhľad a štruktúru šitú na mieru</div>
               <div className="mt-auto font-heading text-xl md:text-2xl text-gray-400">2</div>
             </FloatingCard>
             {/* Card 3 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[220px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="font-heading text-base md:text-lg font-bold mb-2 text-[#023047]">Vývoj a testovanie</div>
-              <div className="font-mono text-xs md:text-sm mb-4 text-black">Postavíme Váš web na moderných technológiách, otestujeme jeho rýchlosť a bezpečnosť</div>
+            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-10 flex flex-col items-start min-h-[180px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
+              <div className="font-heading text-base md:text-lg font-bold mb-1 md:mb-2 text-[#023047]">Vývoj a testovanie</div>
+              <div className="font-mono text-xs md:text-sm mb-2 md:mb-4 text-black">Postavíme Váš web na moderných technológiách, otestujeme jeho rýchlosť a bezpečnosť</div>
               <div className="mt-auto font-heading text-xl md:text-2xl text-gray-400">3</div>
             </FloatingCard>
             {/* Card 4 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[220px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="font-heading text-base md:text-lg font-bold mb-2 text-[#023047]">Spustenie a podpora</div>
-              <div className="font-mono text-xs md:text-sm mb-4 text-black">Web Vám nasadíme, odovzdáme, a ak budete chcieť, ostaneme Vám kryť chrbát.</div>
+            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-10 flex flex-col items-start min-h-[180px] md:min-h-[260px] transition-transform duration-200 hover:scale-105 w-full">
+              <div className="font-heading text-base md:text-lg font-bold mb-1 md:mb-2 text-[#023047]">Spustenie a podpora</div>
+              <div className="font-mono text-xs md:text-sm mb-2 md:mb-4 text-black">Web Vám nasadíme, odovzdáme, a ak budete chcieť, ostaneme Vám kryť chrbát.</div>
               <div className="mt-auto font-heading text-xl md:text-2xl text-gray-400">4</div>
             </FloatingCard>
           </div>
@@ -142,43 +142,61 @@ export default function Home() {
             Pozrite si, ako sme pomohli značkám rásť, vystúpiť z davu a zaujať svoje publikum.
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
-            {/* Project 1 */}
+            {/* Project 1 - KarinArt */}
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[300px] md:min-h-[380px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="w-full h-28 md:h-40 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center">
-                <span className="text-gray-400 font-mono text-xs md:text-base">Obrázok projektu</span>
+              <div className="w-full h-28 md:h-40 rounded-xl mb-4 md:mb-6 flex items-center justify-center overflow-hidden">
+                <Image 
+                  src="/karinart.png" 
+                  alt="Karin Art Tattoo" 
+                  width={400} 
+                  height={225} 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="font-heading text-lg md:text-2xl font-bold mb-2 text-[#023047]">Názov projektu</div>
-              <div className="font-mono text-xs md:text-sm text-[#FFB703] mb-1">Kategória</div>
-              <div className="font-mono text-sm md:text-base mb-4 md:mb-6 text-black">Mini popis Modernizácia webu pre firmu v oblasti tetovania</div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
+              <div className="font-heading text-lg md:text-2xl font-bold mb-2 text-[#023047]">Karin Art Tattoo</div>
+              <div className="font-mono text-xs md:text-sm text-[#FFB703] mb-1">Web Development</div>
+              <div className="font-mono text-sm md:text-base mb-4 md:mb-6 text-black">Moderný, elegantný web pre tetovací salón v Bratislave s dôrazom na prezentáciu portfólia umeleckých diel a jednoduchú komunikáciu s klientmi.</div>
+              <a href="https://www.karinart.sk" target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
                 <PaletteButton variant="secondary" className="w-full">
                   Pozrieť projekt
                 </PaletteButton>
               </a>
             </div>
-            {/* Project 2 */}
+            {/* Project 2 - Natus Volare */}
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[300px] md:min-h-[380px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="w-full h-28 md:h-40 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center">
-                <span className="text-gray-400 font-mono text-xs md:text-base">Obrázok projektu</span>
+              <div className="w-full h-28 md:h-40 rounded-xl mb-4 md:mb-6 flex items-center justify-center overflow-hidden">
+                <Image 
+                  src="/natusvolare.png" 
+                  alt="Natus Volare" 
+                  width={400} 
+                  height={225} 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="font-heading text-lg md:text-2xl font-bold mb-2 text-[#023047]">Názov projektu</div>
-              <div className="font-mono text-xs md:text-sm text-[#FFB703] mb-1">Kategória</div>
-              <div className="font-mono text-sm md:text-base mb-4 md:mb-6 text-black">Mini popis Modernizácia webu pre firmu v oblasti tetovania</div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
+              <div className="font-heading text-lg md:text-2xl font-bold mb-2 text-[#023047]">Natus Volare</div>
+              <div className="font-mono text-xs md:text-sm text-[#FFB703] mb-1">Web Development</div>
+              <div className="font-mono text-sm md:text-base mb-4 md:mb-6 text-black">Dynamický web pre spoločnosť špecializujúcu sa na dronové služby, ktorý efektívne prezentuje široké spektrum služieb od filmovania po termálne inšpekcie.</div>
+              <a href="https://misk0o.github.io/Natus-Volare/" target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
                 <PaletteButton variant="secondary" className="w-full">
                   Pozrieť projekt
                 </PaletteButton>
               </a>
             </div>
-            {/* Project 3 */}
+            {/* Project 3 - Portfolio */}
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-start min-h-[300px] md:min-h-[380px] transition-transform duration-200 hover:scale-105 w-full">
-              <div className="w-full h-28 md:h-40 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center">
-                <span className="text-gray-400 font-mono text-xs md:text-base">Obrázok projektu</span>
+              <div className="w-full h-28 md:h-40 rounded-xl mb-4 md:mb-6 flex items-center justify-center overflow-hidden">
+                <Image 
+                  src="/portfolio.png" 
+                  alt="Developer Portfolio" 
+                  width={400} 
+                  height={225} 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="font-heading text-lg md:text-2xl font-bold mb-2 text-[#023047]">Názov projektu</div>
-              <div className="font-mono text-xs md:text-sm text-[#FFB703] mb-1">Kategória</div>
-              <div className="font-mono text-sm md:text-base mb-4 md:mb-6 text-black">Mini popis Modernizácia webu pre firmu v oblasti tetovania</div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
+              <div className="font-heading text-lg md:text-2xl font-bold mb-2 text-[#023047]">Developer Portfolio</div>
+              <div className="font-mono text-xs md:text-sm text-[#FFB703] mb-1">Web Development</div>
+              <div className="font-mono text-sm md:text-base mb-4 md:mb-6 text-black">Minimalistické a elegantné portfólio pre vývojára, ktoré efektívne prezentuje jeho zručnosti, projekty a profesionálne skúsenosti s dôrazom na čistý dizajn.</div>
+              <a href="https://my-portfolio-delta-sandy-33.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-auto w-full">
                 <PaletteButton variant="secondary" className="w-full">
                   Pozrieť projekt
                 </PaletteButton>
