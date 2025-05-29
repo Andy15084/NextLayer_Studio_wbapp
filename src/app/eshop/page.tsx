@@ -1,10 +1,12 @@
-import AnimatedOnScroll from "@/components/AnimatedOnScroll";
-import PaletteButton from "@/components/PaletteButton";
 import Image from "next/image";
 import Link from "next/link";
 
+// Force static generation without client-side components
 export const dynamic = 'force-static';
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = false;
+export const fetchCache = 'force-cache';
+export const runtime = 'nodejs';
+export const preferredRegion = 'auto';
 
 export default function EshopPage() {
   return (
@@ -44,7 +46,7 @@ export default function EshopPage() {
 
       {/* Technologies Section */}
       <section className="max-w-6xl mx-auto mb-20">
-        <AnimatedOnScroll animation="fade-up">
+        <div className="opacity-100 transition-all duration-700 ease-out">
           <div className="flex items-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#023047]">Používané technológie</h2>
           </div>
@@ -169,7 +171,7 @@ export default function EshopPage() {
             </div>
             <div className="hidden md:block"></div>
           </div>
-        </AnimatedOnScroll>
+        </div>
       </section>
 
       {/* CTA Section */}
@@ -181,10 +183,8 @@ export default function EshopPage() {
           <p className="font-mono text-lg text-white mb-8 max-w-2xl mx-auto">
             Kontaktujte nás a spoločne nájdeme to najlepšie riešenie pre váš online obchod.
           </p>
-          <Link href="/kontakt">
-            <PaletteButton variant="secondary">
-              Kontaktovať nás
-            </PaletteButton>
+          <Link href="/kontakt" className="font-mono px-4 py-2 sm:px-5 sm:py-3 rounded-[16px] text-base sm:text-lg font-bold bg-[#FFB703] border-2 border-[#FFB703] text-[#023047] inline-block hover:bg-[#023047] hover:text-white transition-colors">
+            Kontaktovať nás
           </Link>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function EshopPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* Featured Eshop 1 */}
-          <AnimatedOnScroll animation="fade-up" delay={0} className="h-full">
+          <div className="h-full">
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-start h-full transition-transform duration-200 hover:scale-105">
               <div className="w-full h-40 md:h-48 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
                 <Image 
@@ -228,16 +228,14 @@ export default function EshopPage() {
                 </div>
               </div>
               
-              <Link href="#" className="w-full mt-auto">
-                <PaletteButton variant="secondary" className="w-full">
-                  Pozrieť prípadovú štúdiu
-                </PaletteButton>
+              <Link href="#" className="w-full mt-auto font-mono px-4 py-2 sm:px-5 sm:py-3 rounded-[16px] text-base sm:text-lg font-bold bg-[#FFB703] border-2 border-[#FFB703] text-[#023047] inline-block hover:bg-[#023047] hover:text-white transition-colors text-center">
+                Pozrieť prípadovú štúdiu
               </Link>
             </div>
-          </AnimatedOnScroll>
+          </div>
 
           {/* Featured Eshop 2 */}
-          <AnimatedOnScroll animation="fade-up" delay={100} className="h-full">
+          <div className="h-full">
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-start h-full transition-transform duration-200 hover:scale-105">
               <div className="w-full h-40 md:h-48 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
                 <Image 
@@ -265,13 +263,11 @@ export default function EshopPage() {
                 </div>
               </div>
               
-              <Link href="#" className="w-full mt-auto">
-                <PaletteButton variant="secondary" className="w-full">
-                  Pozrieť prípadovú štúdiu
-                </PaletteButton>
+              <Link href="#" className="w-full mt-auto font-mono px-4 py-2 sm:px-5 sm:py-3 rounded-[16px] text-base sm:text-lg font-bold bg-[#FFB703] border-2 border-[#FFB703] text-[#023047] inline-block hover:bg-[#023047] hover:text-white transition-colors text-center">
+                Pozrieť prípadovú štúdiu
               </Link>
             </div>
-          </AnimatedOnScroll>
+          </div>
         </div>
       </section>
     </main>
