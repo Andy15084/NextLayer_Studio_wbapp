@@ -8,6 +8,7 @@ const nextConfig = {
         pathname: '**',
       },
     ],
+    unoptimized: true,
   },
   // Add webpack configuration to handle favicon
   webpack: (config) => {

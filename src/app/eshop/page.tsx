@@ -1,9 +1,10 @@
-"use client";
-
 import AnimatedOnScroll from "@/components/AnimatedOnScroll";
 import PaletteButton from "@/components/PaletteButton";
 import Image from "next/image";
 import Link from "next/link";
+
+export const dynamic = 'force-static';
+export const revalidate = 3600; // Revalidate every hour
 
 export default function EshopPage() {
   return (
@@ -21,7 +22,7 @@ export default function EshopPage() {
         </div>
         {/* Right: Illustration (no card styling) */}
         <div className="flex-1 flex justify-center items-center w-full">
-          <Image src="/eshop illustration.png" alt="Eshop Illustration" width={480} height={480} className="w-full max-w-md h-auto object-contain" priority />
+          <Image src="/eshop illustration.png" alt="Eshop Illustration" width={480} height={480} className="w-full max-w-md h-auto object-contain" priority unoptimized />
         </div>
       </section>
 
@@ -31,13 +32,13 @@ export default function EshopPage() {
         <div className="flex flex-col items-start text-left max-w-md w-full">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[#023047]">Jednoduchá administrácia</h2>
           <p className="font-mono text-base sm:text-lg mb-6 text-[#023047]">Váš e-shop bude mať intuitívny administračný panel, ktorý vám umožní jednoducho spravovať produkty, objednávky a zákazníkov. Automatizované e-mailové notifikácie vám ušetria čas a všetko budete mať pod kontrolou.</p>
-          <Image src="/statistic illustration.png" alt="Jednoduchá administrácia" width={500} height={350} className="w-full max-w-md h-auto object-contain" />
+          <Image src="/statistic illustration.png" alt="Jednoduchá administrácia" width={500} height={350} className="w-full max-w-md h-auto object-contain" unoptimized />
         </div>
         {/* Right: Integrácia služieb */}
         <div className="flex flex-col items-start text-left max-w-md w-full">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[#023047]">Integrácia služieb</h2>
           <p className="font-mono text-base sm:text-lg mb-6 text-[#023047]">Prepojíme váš e-shop s externými službami, ktoré vám uľahčia podnikanie. Či už ide o platobné brány ako Stripe a PayPal, analytické nástroje alebo logistické služby. Všetko pre vaše pohodlie a efektívne podnikanie.</p>
-          <Image src="/third party illustration.png" alt="Integrácia služieb" width={500} height={350} className="w-full max-w-md h-auto object-contain" />
+          <Image src="/third party illustration.png" alt="Integrácia služieb" width={500} height={350} className="w-full max-w-md h-auto object-contain" unoptimized />
         </div>
       </section>
 
@@ -206,7 +207,8 @@ export default function EshopPage() {
                   src="/eshop illustration.png"
                   alt="Módny e-shop" 
                   fill 
-                  className="object-cover" 
+                  className="object-cover"
+                  unoptimized
                 />
               </div>
               
@@ -242,7 +244,8 @@ export default function EshopPage() {
                   src="/third party illustration.png"
                   alt="Elektronika" 
                   fill 
-                  className="object-cover" 
+                  className="object-cover"
+                  unoptimized
                 />
               </div>
               
