@@ -30,6 +30,20 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "NextLayer Studio",
   description: "NextLayer Studio - Web Development Agency",
+  icons: {
+    icon: [
+      {
+        url: "/logopink.png",
+        type: "image/png",
+        sizes: "any",
+      },
+    ],
+    apple: {
+      url: "/apple-touch-icon.png",
+      type: "image/png",
+    },
+    shortcut: "/logopink.png",
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +56,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logopink.png" />
         <link rel="shortcut icon" href="/logopink.png" />
-        <link rel="apple-touch-icon" href="/logopink.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="mask-icon" href="/logopink.png" color="#000000" />
       </head>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         <Navbar />

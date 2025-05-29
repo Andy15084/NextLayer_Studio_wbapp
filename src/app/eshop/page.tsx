@@ -1,12 +1,9 @@
+"use client";
+
+import AnimatedOnScroll from "@/components/AnimatedOnScroll";
+import PaletteButton from "@/components/PaletteButton";
 import Image from "next/image";
 import Link from "next/link";
-
-// Force static generation without client-side components
-export const dynamic = 'force-static';
-export const revalidate = false;
-export const fetchCache = 'force-cache';
-export const runtime = 'nodejs';
-export const preferredRegion = 'auto';
 
 export default function EshopPage() {
   return (
@@ -24,7 +21,7 @@ export default function EshopPage() {
         </div>
         {/* Right: Illustration (no card styling) */}
         <div className="flex-1 flex justify-center items-center w-full">
-          <Image src="/eshop illustration.png" alt="Eshop Illustration" width={480} height={480} className="w-full max-w-md h-auto object-contain" priority unoptimized />
+          <Image src="/eshop illustration.png" alt="Eshop Illustration" width={480} height={480} className="w-full max-w-md h-auto object-contain" priority />
         </div>
       </section>
 
@@ -34,19 +31,19 @@ export default function EshopPage() {
         <div className="flex flex-col items-start text-left max-w-md w-full">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[#023047]">Jednoduchá administrácia</h2>
           <p className="font-mono text-base sm:text-lg mb-6 text-[#023047]">Váš e-shop bude mať intuitívny administračný panel, ktorý vám umožní jednoducho spravovať produkty, objednávky a zákazníkov. Automatizované e-mailové notifikácie vám ušetria čas a všetko budete mať pod kontrolou.</p>
-          <Image src="/statistic illustration.png" alt="Jednoduchá administrácia" width={500} height={350} className="w-full max-w-md h-auto object-contain" unoptimized />
+          <Image src="/statistic illustration.png" alt="Jednoduchá administrácia" width={500} height={350} className="w-full max-w-md h-auto object-contain" />
         </div>
         {/* Right: Integrácia služieb */}
         <div className="flex flex-col items-start text-left max-w-md w-full">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-[#023047]">Integrácia služieb</h2>
           <p className="font-mono text-base sm:text-lg mb-6 text-[#023047]">Prepojíme váš e-shop s externými službami, ktoré vám uľahčia podnikanie. Či už ide o platobné brány ako Stripe a PayPal, analytické nástroje alebo logistické služby. Všetko pre vaše pohodlie a efektívne podnikanie.</p>
-          <Image src="/third party illustration.png" alt="Integrácia služieb" width={500} height={350} className="w-full max-w-md h-auto object-contain" unoptimized />
+          <Image src="/third party illustration.png" alt="Integrácia služieb" width={500} height={350} className="w-full max-w-md h-auto object-contain" />
         </div>
       </section>
 
       {/* Technologies Section */}
       <section className="max-w-6xl mx-auto mb-20">
-        <div className="opacity-100 transition-all duration-700 ease-out">
+        <AnimatedOnScroll animation="fade-up">
           <div className="flex items-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-[#023047]">Používané technológie</h2>
           </div>
@@ -171,7 +168,7 @@ export default function EshopPage() {
             </div>
             <div className="hidden md:block"></div>
           </div>
-        </div>
+        </AnimatedOnScroll>
       </section>
 
       {/* CTA Section */}
@@ -183,8 +180,10 @@ export default function EshopPage() {
           <p className="font-mono text-lg text-white mb-8 max-w-2xl mx-auto">
             Kontaktujte nás a spoločne nájdeme to najlepšie riešenie pre váš online obchod.
           </p>
-          <Link href="/kontakt" className="font-mono px-4 py-2 sm:px-5 sm:py-3 rounded-[16px] text-base sm:text-lg font-bold bg-[#FFB703] border-2 border-[#FFB703] text-[#023047] inline-block hover:bg-[#023047] hover:text-white transition-colors">
-            Kontaktovať nás
+          <Link href="/kontakt">
+            <PaletteButton variant="secondary">
+              Kontaktovať nás
+            </PaletteButton>
           </Link>
         </div>
       </section>
@@ -200,15 +199,14 @@ export default function EshopPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {/* Featured Eshop 1 */}
-          <div className="h-full">
+          <AnimatedOnScroll animation="fade-up" delay={0} className="h-full">
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-start h-full transition-transform duration-200 hover:scale-105">
               <div className="w-full h-40 md:h-48 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
                 <Image 
                   src="/eshop illustration.png"
                   alt="Módny e-shop" 
                   fill 
-                  className="object-cover"
-                  unoptimized
+                  className="object-cover" 
                 />
               </div>
               
@@ -228,22 +226,23 @@ export default function EshopPage() {
                 </div>
               </div>
               
-              <Link href="#" className="w-full mt-auto font-mono px-4 py-2 sm:px-5 sm:py-3 rounded-[16px] text-base sm:text-lg font-bold bg-[#FFB703] border-2 border-[#FFB703] text-[#023047] inline-block hover:bg-[#023047] hover:text-white transition-colors text-center">
-                Pozrieť prípadovú štúdiu
+              <Link href="#" className="w-full mt-auto">
+                <PaletteButton variant="secondary" className="w-full">
+                  Pozrieť prípadovú štúdiu
+                </PaletteButton>
               </Link>
             </div>
-          </div>
+          </AnimatedOnScroll>
 
           {/* Featured Eshop 2 */}
-          <div className="h-full">
+          <AnimatedOnScroll animation="fade-up" delay={100} className="h-full">
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col items-start h-full transition-transform duration-200 hover:scale-105">
               <div className="w-full h-40 md:h-48 bg-gray-300 rounded-xl mb-4 md:mb-6 flex items-center justify-center relative overflow-hidden">
                 <Image 
                   src="/third party illustration.png"
                   alt="Elektronika" 
                   fill 
-                  className="object-cover"
-                  unoptimized
+                  className="object-cover" 
                 />
               </div>
               
@@ -263,11 +262,13 @@ export default function EshopPage() {
                 </div>
               </div>
               
-              <Link href="#" className="w-full mt-auto font-mono px-4 py-2 sm:px-5 sm:py-3 rounded-[16px] text-base sm:text-lg font-bold bg-[#FFB703] border-2 border-[#FFB703] text-[#023047] inline-block hover:bg-[#023047] hover:text-white transition-colors text-center">
-                Pozrieť prípadovú štúdiu
+              <Link href="#" className="w-full mt-auto">
+                <PaletteButton variant="secondary" className="w-full">
+                  Pozrieť prípadovú štúdiu
+                </PaletteButton>
               </Link>
             </div>
-          </div>
+          </AnimatedOnScroll>
         </div>
       </section>
     </main>
