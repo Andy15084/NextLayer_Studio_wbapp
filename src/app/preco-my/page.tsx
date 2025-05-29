@@ -8,14 +8,14 @@ const precoMyCards = [
     title: 'AI',
     short: 'Využívame AI a vlastné procesy na to, aby ste Váš nový moderný web mali hotový kvalitne, rýchlo a bez stresu.',
     long: 'Umelú inteligenciu neberieme ako módne slovo, ale ako nástroj, ktorý zrýchli analýzu, pomôže generovať koncepty dizajnu a odhalí chyby ešte skôr, než sa vôbec dostanú do produkcie. Vďaka vlastným AI workflow skracujeme čas dodania, znižujeme náklady a garantujeme konzistentnú kvalitu – bez stresu pre vás.',
-    img: '/moderne.png',
+    img: '/ai.png',
     alt: 'AI',
   },
   {
     title: 'Moderné technológie',
     short: 'Sme generácia, ktorá vyrástla na trendoch internetu. Čo je "in", pre nás nie je novinka, ale bežná súčasť života.',
     long: 'React, Next .js, Tailwind, serverless cloud, CI/CD… tieto skratky sú pre nás bežnou rečou. Používame ich preto, aby bol váš web rýchly, bezpečný a pripravený na budúce rozšírenia. Keď sa objaví nová technológia, okamžite skúmame, či vám môže priniesť konkurenčnú výhodu.',
-    img: '/ai.png',
+    img: '/moderne.png',
     alt: 'Moderne',
   },
   {
