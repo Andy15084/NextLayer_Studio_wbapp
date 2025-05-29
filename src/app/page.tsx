@@ -86,7 +86,7 @@ export default function Home() {
             {/* Card: AI */}
             <AnimatedOnScroll animation="fade-up" delay={0}>
               <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300">
-                <Image src="/moderne.png" alt="AI" width={120} height={120} className="mb-4 md:mb-6 w-20 md:w-44 h-auto" />
+                <Image src="/ai.png" alt="AI" width={120} height={120} className="mb-4 md:mb-6 w-20 md:w-44 h-auto" />
                 <div className="font-heading text-xl md:text-3xl mb-2 md:mb-4 text-[#023047]">AI</div>
                 <div className="font-mono text-base mb-2 text-black">Využívame AI a vlastné procesy na to, aby ste Váš nový moderný web mali hotový kvalitne, rýchlo a bez stresu.</div>
               </div>
@@ -94,7 +94,7 @@ export default function Home() {
             {/* Card: Moderne */}
             <AnimatedOnScroll animation="fade-up" delay={100}>
               <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300">
-                <Image src="/ai.png" alt="Moderne" width={120} height={120} className="mb-4 md:mb-6 w-20 md:w-44 h-auto" />
+                <Image src="/moderne.png" alt="Moderne" width={120} height={120} className="mb-4 md:mb-6 w-20 md:w-44 h-auto" />
                 <div className="font-heading text-xl md:text-3xl mb-2 md:mb-4 text-[#023047]">Moderne</div>
                 <div className="font-mono text-base mb-2 text-black">Sme generácia, ktorá vyrástla na trendoch internetu. Čo je &quot;in&quot;, pre nás nie je novinka, ale bežná súčasť života.</div>
               </div>
