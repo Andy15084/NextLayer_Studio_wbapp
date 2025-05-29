@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export const dynamic = 'force-static';
 export const revalidate = false;
 export const fetchCache = 'force-cache';
