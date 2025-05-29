@@ -1,7 +1,10 @@
-'use client';
-import TypewriterOnView from '@/components/TypewriterOnView';
 import Image from 'next/image';
-import FloatingCard from '@/components/FloatingCard';
+
+export const dynamic = 'force-static';
+export const revalidate = false;
+export const fetchCache = 'force-cache';
+export const runtime = 'nodejs';
+export const preferredRegion = 'auto';
 
 export default function AboutUs() {
   return (
@@ -17,7 +20,7 @@ export default function AboutUs() {
               Studio
             </h1>
             <div className="font-mono text-base sm:text-lg mt-8 text-[#023047]">
-              <TypewriterOnView text="Tím, ktorý tvorí vrstvu navyše" speed={15} showCursor={true} animatedDots={true} />
+              Tím, ktorý tvorí vrstvu navyše
             </div>
           </div>
           
@@ -29,6 +32,7 @@ export default function AboutUs() {
               height={1000}
               className="w-full h-full object-contain"
               priority
+              unoptimized
             />
           </div>
         </div>
@@ -42,8 +46,8 @@ export default function AboutUs() {
 
           {/* First row of 2 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 1 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
+            {/* Card 1 - Static version */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
               <div className="flex flex-row gap-4 items-start">
                 <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-xl overflow-hidden flex-shrink-0 border-2 border-[#FFB703]">
                   <Image
@@ -51,7 +55,7 @@ export default function AboutUs() {
                     alt="Andrej Paulička"
                     fill
                     className="object-cover"
-                    priority
+                    unoptimized
                   />
                 </div>
                 <div className="flex flex-col justify-start flex-1 min-w-0">
@@ -64,9 +68,10 @@ export default function AboutUs() {
               <p className="font-mono text-xs md:text-sm text-black italic mt-2">
                 &quot;Spoločne vždy dosiahneme najlepšie riešenie pre Váš biznis. Postarám sa o to aby sme pre Vás vytvorili čo najlepší návrh, postup práce a cenovú ponuku, ktorá Vám bude vyhovovať.&quot;
               </p>
-            </FloatingCard>
-            {/* Card 2 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
+            </div>
+            
+            {/* Card 2 - Static version */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
               <div className="flex flex-row gap-4 items-start">
                 <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-xl overflow-hidden flex-shrink-0 border-2 border-[#FFB703] bg-gray-200">
                   <div className="w-full h-full flex items-center justify-center text-gray-400">Foto</div>
@@ -81,7 +86,7 @@ export default function AboutUs() {
               <p className="font-mono text-xs md:text-sm text-black italic mt-2">
                 &quot;Naše technologické riešenia sú postavené na moderných technológiách, ktoré zabezpečujú rýchlosť, bezpečnosť a škálovateľnosť.&quot;
               </p>
-            </FloatingCard>
+            </div>
           </div>
 
           {/* Second paragraph */}
@@ -91,8 +96,8 @@ export default function AboutUs() {
 
           {/* Second row of 2 cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Card 3 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
+            {/* Card 3 - Static version */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
               <div className="flex flex-row gap-4 items-start">
                 <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-xl overflow-hidden flex-shrink-0 border-2 border-[#FFB703] bg-gray-200">
                   <div className="w-full h-full flex items-center justify-center text-gray-400">Foto</div>
@@ -107,9 +112,10 @@ export default function AboutUs() {
               <p className="font-mono text-xs md:text-sm text-black italic mt-2">
                 &quot;Marketing je o príbehoch a emóciách. Pomáhame značkám vyprávať ich príbeh spôsobom, ktorý rezonuje s ich publikom.&quot;
               </p>
-            </FloatingCard>
-            {/* Card 4 */}
-            <FloatingCard className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
+            </div>
+            
+            {/* Card 4 - Static version */}
+            <div className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col gap-2 transition-transform duration-200 hover:scale-105 w-full">
               <div className="flex flex-row gap-4 items-start">
                 <div className="w-24 h-24 md:w-28 md:h-28 relative rounded-xl overflow-hidden flex-shrink-0 border-2 border-[#FFB703] bg-gray-200">
                   <div className="w-full h-full flex items-center justify-center text-gray-400">Foto</div>
@@ -124,7 +130,7 @@ export default function AboutUs() {
               <p className="font-mono text-xs md:text-sm text-black italic mt-2">
                 &quot;Dizajn je most medzi technológiou a používateľom. Tvoríme rozhrania, ktoré sú nielen krásne, ale aj intuitívne.&quot;
               </p>
-            </FloatingCard>
+            </div>
           </div>
 
           {/* Remaining paragraphs */}
@@ -139,22 +145,12 @@ export default function AboutUs() {
         </div>
       </section>
       <style jsx global>{`
-        @keyframes bounce-slight {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-6px); }
-        }
-        .animate-bounce-slight {
-          animation: bounce-slight 0.7s;
-        }
         .text-fade-bottom {
           position: relative;
           max-height: 70px;
           overflow: hidden;
           mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
           -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
-        }
-        .custom-duration {
-          transition-duration: 3000ms;
         }
       `}</style>
     </main>
