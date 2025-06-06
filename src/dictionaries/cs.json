@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "webSolutions": "Webová řešení",
+    "marketing": "Marketing",
+    "whyUs": "Proč my",
+    "whyUsMenu": "Proč právě my",
+    "aboutUs": "O nás",
+    "projects": "Úspěšné projekty",
+    "contact": "Kontakt"
+  },
+  "services": {
+    "eshopCreation": "Tvorba e-shopu",
+    "webAppDevelopment": "Tvorba webových aplikací",
+    "websiteModernization": "Modernizace webových stránek",
+    "automationAndIndustrial": "Automatizace a průmyslová řešení"
+  },
+  "homepage": {
+    "heroTitle": "Vytváříme profesionální webová řešení",
+    "heroSubtitle": "Specializujeme se na tvorbu moderních webových stránek, e-shopů a aplikací",
+    "ctaButton": "Kontaktujte nás",
+    "learnMore": "Zjistit více"
+  },
+  "contact": {
+    "title": "Kontaktujte nás",
+    "name": "Jméno",
+    "email": "Email",
+    "message": "Zpráva",
+    "send": "Odeslat",
+    "success": "Zpráva byla úspěšně odeslána!",
+    "error": "Při odesílání zprávy došlo k chybě."
+  }
+} 

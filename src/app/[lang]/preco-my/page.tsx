@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import { useTranslation } from '@/lib/TranslationContext';
 
@@ -55,7 +54,6 @@ export default function PrecoMyPage() {
 
   return (
     <main className="p-4 sm:p-8 relative z-10 min-h-screen" style={{ background: '#8ECAE6' }}>
-      <Navbar />
       <section className="max-w-6xl mx-auto mt-20 md:mt-32 mb-10 sm:mb-16 md:mb-24">
         <div className="mb-10 text-left ml-0 sm:ml-2 md:ml-4 lg:ml-6">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#023047] leading-tight mb-6">{t('whyUs.title')}</h1>

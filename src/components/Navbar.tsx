@@ -3,32 +3,43 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const services = [
-  { name: 'Tvorba eshopu', href: '/eshop' },
-  { name: 'Tvorba webových aplikácii', href: '/webove-aplikacie' },
-  { name: 'Modernizácia webstránky', href: '/sluzby/modernizacia' },
-  { name: 'Automatizácia a priemyselné riešenia', href: '/sluzby/automatizacia' },
-];
-
-const languages = [
-  { code: 'sk', name: 'SK', fullName: 'Slovenský' },
-  { code: 'de', name: 'DE', fullName: 'Deutsch' },
-  { code: 'cs', name: 'CS', fullName: 'Čeština' },
-  { code: 'en', name: 'EN', fullName: 'English' },
-];
+import { useTranslation } from '@/lib/TranslationContext';
 
 export default function Navbar() {
+  const { currentLanguage, setLanguage, t } = useTranslation();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('sk');
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
   const aboutTimeout = useRef<NodeJS.Timeout | null>(null);
   const languageTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  // Helper function to create language-specific URLs
+  const createURL = (path: string) => {
+    if (currentLanguage === 'sk') {
+      return path === '/' ? '/' : path;
+    }
+    return `/${currentLanguage}${path}`;
+  };
+
+  // Services menu items with translations
+  const services = [
+    { name: t('services.eshopCreation'), href: createURL('/eshop') },
+    { name: t('services.webAppDevelopment'), href: createURL('/webove-aplikacie') },
+    { name: t('services.websiteModernization'), href: createURL('/sluzby/modernizacia') },
+    { name: t('services.automationAndIndustrial'), href: createURL('/sluzby/automatizacia') },
+  ];
+
+  // Language options with translations
+  const languages = [
+    { code: 'sk', name: 'SK', fullName: t('languages.slovak') },
+    { code: 'de', name: 'DE', fullName: t('languages.german') },
+    { code: 'cs', name: 'CS', fullName: t('languages.czech') },
+    { code: 'en', name: 'EN', fullName: t('languages.english') },
+  ];
 
   // Scroll handler for auto-hide/show
   useEffect(() => {
@@ -73,10 +84,17 @@ export default function Navbar() {
   };
 
   const handleLanguageChange = (code: string) => {
-    setCurrentLanguage(code);
+    setLanguage(code as 'sk' | 'en' | 'de' | 'cs');
     setIsLanguageOpen(false);
-    // Here you would typically implement the actual language change logic
-    // For example, using next-intl or similar internationalization library
+    
+    // Redirect to the appropriate URL
+    if (code === 'sk') {
+      // For Slovak, go to root
+      window.location.href = '/';
+    } else {
+      // For other languages, go to language-specific path
+      window.location.href = `/${code}/`;
+    }
   };
 
   return (
@@ -90,7 +108,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/">
+            <Link href={createURL('/')}>
               <div className="relative w-40 h-10 cursor-pointer flex items-center">
                 <Image
                   src="/logoblack.png"
@@ -114,7 +132,7 @@ export default function Navbar() {
                   onMouseLeave={handleServicesLeave}
                   className="bg-[#FFB703] text-[#023047] border-2 border-[#FFB703] hover:bg-[#023047] hover:border-[#023047] hover:text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center"
                 >
-                  Web riešenia
+                  {t('nav.webSolutions')}
                   <svg
                     className={`ml-2 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
                     fill="none"
@@ -157,7 +175,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="bg-[#00ffdd] hover:bg-[#00e6c7] text-[#023047] font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition"
               >
-                Marketing
+                {t('nav.marketing')}
               </a>
 
               {/* About Dropdown */}
@@ -167,7 +185,7 @@ export default function Navbar() {
                   onMouseLeave={handleAboutLeave}
                   className="font-heading text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium inline-flex items-center"
                 >
-                  Prečo my
+                  {t('nav.whyUs')}
                   <svg
                     className={`ml-2 h-4 w-4 transition-transform ${
                       isAboutOpen ? 'rotate-180' : ''
@@ -192,17 +210,17 @@ export default function Navbar() {
                   >
                     <div className="py-1 divide-y divide-gray-200" role="menu">
                       <Link
-                        href="/preco-my"
+                        href={createURL('/preco-my')}
                         className="font-heading text-gray-700 hover:text-gray-900 block px-4 py-2 text-sm"
                       >
-                        Prečo práve my
+                        {t('nav.whyUsMenu')}
                       </Link>
                       <Link
-                        href="/o-nas"
+                        href={createURL('/o-nas')}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-heading"
                         role="menuitem"
                       >
-                        O nás
+                        {t('nav.aboutUs')}
                       </Link>
                     </div>
                   </div>
@@ -210,17 +228,17 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="/projekty"
+                href={createURL('/projekty')}
                 className="font-heading text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
               >
-                Úspešné projekty
+                {t('nav.projects')}
               </Link>
 
               <Link
-                href="/kontakt"
+                href={createURL('/kontakt')}
                 className="font-heading text-gray-700 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium"
               >
-                Kontakt
+                {t('nav.contact')}
               </Link>
 
               {/* Language Selector */}
@@ -362,7 +380,7 @@ export default function Navbar() {
               className="bg-[#FFB703] text-[#023047] border-2 border-[#FFB703] hover:bg-[#023047] hover:border-[#023047] hover:text-white font-heading px-5 py-2 rounded-md text-sm font-bold shadow transition-colors duration-200 inline-flex items-center w-full justify-between"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
-              Web riešenia
+              {t('nav.webSolutions')}
               <svg
                 className={`ml-2 h-4 w-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`}
                 fill="none"
@@ -398,7 +416,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="bg-[#00ffdd] hover:bg-[#00e6c7] text-[#023047] font-heading px-5 py-3 rounded-md text-sm font-bold shadow transition w-full block text-center"
           >
-            Marketing
+            {t('nav.marketing')}
           </a>
 
           {/* Mobile About Dropdown */}
@@ -407,38 +425,38 @@ export default function Navbar() {
               className="font-heading text-gray-700 hover:text-gray-900 block w-full text-left px-3 py-3 rounded-md text-base font-medium"
               onClick={() => setIsAboutOpen(!isAboutOpen)}
             >
-              Prečo my
+              {t('nav.whyUs')}
             </button>
             {isAboutOpen && (
               <div className="pl-4 space-y-2 mt-1">
                 <Link
-                  href="/preco-my"
+                  href={createURL('/preco-my')}
                   className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-sm"
                 >
-                  Prečo práve my
+                  {t('nav.whyUsMenu')}
                 </Link>
                 <Link
-                  href="/o-nas"
+                  href={createURL('/o-nas')}
                   className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-2 rounded-md text-sm"
                 >
-                  O nás
+                  {t('nav.aboutUs')}
                 </Link>
               </div>
             )}
           </div>
 
           <Link
-            href="/projekty"
+            href={createURL('/projekty')}
             className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-3 rounded-md text-base font-medium"
           >
-            Úspešné projekty
+            {t('nav.projects')}
           </Link>
 
           <Link
-            href="/kontakt"
+            href={createURL('/kontakt')}
             className="font-heading text-gray-700 hover:text-gray-900 block px-3 py-3 rounded-md text-base font-medium"
           >
-            Kontakt
+            {t('nav.contact')}
           </Link>
         </div>
       </div>

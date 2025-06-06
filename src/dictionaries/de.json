@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "webSolutions": "Web-Lösungen",
+    "marketing": "Marketing",
+    "whyUs": "Warum Wir",
+    "whyUsMenu": "Warum Uns Wählen",
+    "aboutUs": "Über Uns",
+    "projects": "Erfolgreiche Projekte",
+    "contact": "Kontakt"
+  },
+  "services": {
+    "eshopCreation": "E-Shop-Erstellung",
+    "webAppDevelopment": "Webapplikationsentwicklung",
+    "websiteModernization": "Webseiten-Modernisierung",
+    "automationAndIndustrial": "Automatisierung und Industrielle Lösungen"
+  },
+  "homepage": {
+    "heroTitle": "Wir Erstellen Professionelle Web-Lösungen",
+    "heroSubtitle": "Wir spezialisieren uns auf die Entwicklung moderner Websites, E-Shops und Anwendungen",
+    "ctaButton": "Kontaktieren Sie Uns",
+    "learnMore": "Mehr Erfahren"
+  },
+  "contact": {
+    "title": "Kontaktieren Sie Uns",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden",
+    "success": "Nachricht wurde erfolgreich gesendet!",
+    "error": "Beim Senden der Nachricht ist ein Fehler aufgetreten."
+  }
+} 

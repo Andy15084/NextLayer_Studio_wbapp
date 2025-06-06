@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useTranslation } from "@/lib/TranslationContext";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
   
   return (
     <>
@@ -32,7 +32,7 @@ export default function Home() {
             
             {/* Button pulled way up into text area */}
             <div className="-mt-8 md:-mt-12 text-center md:text-left">
-              <Link href="/kontakt">
+              <Link href={`/${currentLanguage}/kontakt`}>
                 <PaletteButton variant="secondary">{t('homepage.ctaButton')}</PaletteButton>
               </Link>
             </div>
@@ -232,7 +232,7 @@ export default function Home() {
             </FloatingCard>
           </div>
           <div className="flex justify-center">
-            <Link href="/projekty">
+            <Link href={`/${currentLanguage}/projekty`}>
               <PaletteButton variant="secondary">{t('homepage.viewFullPortfolio')}</PaletteButton>
             </Link>
           </div>
@@ -254,7 +254,7 @@ export default function Home() {
             {t('homepage.aboutValues')}
           </div>
           <div className="flex justify-center">
-            <Link href="/o-nas">
+            <Link href={`/${currentLanguage}/o-nas`}>
               <PaletteButton>{t('homepage.aboutTeamButton')}</PaletteButton>
             </Link>
           </div>
@@ -380,4 +380,4 @@ export default function Home() {
       </main>
     </>
   );
-}
+} 

@@ -5,6 +5,7 @@ import AnimatedOnScroll from "@/components/AnimatedOnScroll";
 import PaletteButton from "@/components/PaletteButton";
 import Image from "next/image";
 import Link from 'next/link';
+import { useTranslation } from "@/lib/TranslationContext";
 
 interface ExpandableCardProps {
   title: string;
@@ -146,6 +147,7 @@ function TextSection({ title, content, isEven, illustration }: TextSectionProps)
 }
 
 export default function ModernizaciaPage() {
+  const { t } = useTranslation();
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
   const [userInteractedCards, setUserInteractedCards] = useState<Set<number>>(new Set());
 
@@ -190,62 +192,62 @@ export default function ModernizaciaPage() {
   const content: ContentItem[] = [
     {
       type: 'text',
-      title: "Prečo modernizovať webstránku?",
-      content: "V dnešnej digitálnej dobe je vaša webstránka často prvým kontaktom potenciálnych zákazníkov s vašou značkou. Ak je zastaralá alebo nefunkčná, môžete stratiť dôležité obchodné príležitosti. Modernizácia webstránky nie je len o vzhľade – ide o komplexné vylepšenie, ktoré prináša reálne výsledky.",
+      title: t('modernization.whyModernize.title'),
+      content: t('modernization.whyModernize.content'),
       illustration: "/precomodernizovat-webstranku.png"
     },
     {
       type: 'card',
-      title: "Rýchlosť a prvý dojem",
-      content: "Keď niekto otvorí vašu stránku, máte len pár sekúnd, aby ste ho zaujali. Ak sa stránka načítava pomaly alebo vyzerá, akoby uviazla v roku 2010, návštevník jednoducho klikne na \"späť\" a ide ku konkurencii. Rýchly a moderný web pôsobí profesionálne a zvyšuje šancu, že si zákazník prečíta, čo mu ponúkate."
+      title: t('modernization.speedFirstImpression.title'),
+      content: t('modernization.speedFirstImpression.content')
     },
     {
       type: 'text',
-      title: "Čo všetko modernizácia zahŕňa?",
-      content: "Modernizácia webstránky je komplexný proces, ktorý zahŕňa technické vylepšenia, aktualizáciu dizajnu a optimalizáciu používateľského zážitku. Zameriavame sa na všetky aspekty, ktoré sú dôležité pre úspech vašej online prítomnosti.",
+      title: t('modernization.whatIncludes.title'),
+      content: t('modernization.whatIncludes.content'),
       illustration: "/covsetko-modernizacia-zahrna.png"
     },
     {
       type: 'card',
-      title: "Jednoduchý, prehľadný dizajn",
-      content: "Ľudia nechcú lúštiť, kde majú kliknúť. Čisté rozloženie, čitateľné písmo a jedno-značné tlačidlo s výzvou na akciu (napríklad \"Objednať\" alebo \"Kontaktovať\") im uľahčia rozhodovanie. Menej zbytočných farieb a blikajúcich prvkov znamená, že sa sústredia presne na to, čo im chcete povedať."
+      title: t('modernization.simpleDesign.title'),
+      content: t('modernization.simpleDesign.content')
     },
     {
       type: 'card',
-      title: "Cesta, ktorá vedie k cieľu",
-      content: "Dobre navrhnutá stránka funguje ako predajca v obchode: privíta človeka, vysvetlí benefity, ukáže skúsenosti iných zákazníkov a nakoniec ho prirodzene privedie k objednávke. Keď sú kroky jasné a logicky zoradené, návštevníci sa menia na platiacich klientov bez toho, aby si to uvedomili."
+      title: t('modernization.userJourney.title'),
+      content: t('modernization.userJourney.content')
     },
     {
       type: 'text',
-      title: "Technologické vylepšenia",
-      content: "Moderná webstránka musí byť nielen krásna, ale aj technicky dokonalá. Implementujeme najnovšie technológie pre rýchle načítanie, bezpečnosť a kompatibilitu so všetkými zariadeniami. Naše riešenia sú pripravené na budúcnosť a ľahko rozšíriteľné.",
+      title: t('modernization.techImprovements.title'),
+      content: t('modernization.techImprovements.content'),
       illustration: "/technologickevylepsenia.png"
     },
     {
       type: 'card',
-      title: "Funguje rovnako na mobile aj na počítači",
-      content: "Viac ako 60 % ľudí dnes prehliada internet cez telefón. Ak sa web na malom displeji rozpadne, stratíte väčšinu publika a Google vás navyše posunie nižšie vo výsledkoch vyhľadávania. Preto je dôležité, aby sa obsah automaticky prispôsobil každému zariadeniu – od smartfónu až po veľký monitor."
+      title: t('modernization.mobileCompatibility.title'),
+      content: t('modernization.mobileCompatibility.content')
     },
     {
       type: 'card',
-      title: "Súčasné technológie a bezpečnosť",
-      content: "Moderný kód nielen zrýchľuje načítanie stránok, ale aj chráni údaje vašich zákazníkov. Zastaralé technológie sú náchylnejšie na chyby a hackerské útoky. Priebežná modernizácia znamená, že stránka spĺňa aktuálne normy, zobrazuje sa správne vo všetkých prehliadačoch a ľahko sa na ňu dajú doplniť nové funkcie – napríklad online platby či chat s podporou."
+      title: t('modernization.modernTechSecurity.title'),
+      content: t('modernization.modernTechSecurity.content')
     },
     {
       type: 'text',
-      title: "Výhody modernizácie",
-      content: "Modernizácia webstránky prináša okamžité aj dlhodobé benefity. Zlepšuje vašu pozíciu vo vyhľadávačoch, zvyšuje konverzie a posilňuje dôveryhodnosť vašej značky. Je to investícia, ktorá sa vracia v podobe vyšších tržieb a nižších marketingových nákladov.",
+      title: t('modernization.benefits.title'),
+      content: t('modernization.benefits.content'),
       illustration: "/vyhody-modernizacie.png"
     },
     {
       type: 'card',
-      title: "Lepšie výsledky vo vyhľadávaní",
-      content: "Vyhľadávače, ako je Google, uprednostňujú rýchle a mobil-pripravené stránky. Čím lepšie technicky a obsahovo stránku nastavíte, tým vyššie sa zobrazí vo výsledkoch. To znamená viac návštev bez platenia reklamy a nižšie náklady na marketing."
+      title: t('modernization.betterSeo.title'),
+      content: t('modernization.betterSeo.content')
     },
     {
       type: 'card',
-      title: "Pripravenosť na budúcnosť",
-      content: "Trendy a požiadavky sa menia rýchlo. Ak je web postavený moderne, nové sekcie, jazyky či prepojenia na sociálne siete pridáte za pár hodín, nie za týždne. Investícia do modernizácie sa preto vracia nielen vyššími tržbami, ale aj úsporou času a peňazí pri ďalšom rozvoji."
+      title: t('modernization.futureReady.title'),
+      content: t('modernization.futureReady.content')
     }
   ];
 
@@ -256,10 +258,10 @@ export default function ModernizaciaPage() {
         {/* Left: Title and Subtitle */}
         <div className="flex-1 flex flex-col items-center md:items-start justify-between px-2 md:ml-10 md:mt-10 min-h-[280px] md:min-h-[320px]">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 leading-tight text-[#023047] text-left">
-            Modernizácia webstránky
+            {t('modernization.title')}
           </h1>
           <p className="font-mono text-xl md:text-2xl text-[#023047] mb-6 text-center md:text-left max-w-2xl">
-            Dajte svojej webstránke nový život
+            {t('modernization.subtitle')}
           </p>
         </div>
         {/* Right: Illustration */}
@@ -301,14 +303,14 @@ export default function ModernizaciaPage() {
       <section className="max-w-6xl mx-auto px-4 sm:px-8 mb-20">
         <div className="bg-[#023047] rounded-2xl shadow-xl p-12 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-white">
-            Chcete modernizovať svoju webstránku?
+            {t('modernization.ctaTitle')}
           </h2>
           <p className="font-mono text-lg text-white mb-8 max-w-2xl mx-auto">
-            Kontaktujte nás a spoločne dáme vašej webstránke nový život.
+            {t('modernization.ctaDescription')}
           </p>
           <Link href="/kontakt">
             <PaletteButton variant="secondary">
-              Kontaktovať nás
+              {t('modernization.ctaButton')}
             </PaletteButton>
           </Link>
         </div>

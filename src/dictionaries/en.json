@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "webSolutions": "Web Solutions",
+    "marketing": "Marketing",
+    "whyUs": "Why Us",
+    "whyUsMenu": "Why Choose Us",
+    "aboutUs": "About Us",
+    "projects": "Successful Projects",
+    "contact": "Contact"
+  },
+  "services": {
+    "eshopCreation": "E-shop Creation",
+    "webAppDevelopment": "Web Application Development",
+    "websiteModernization": "Website Modernization",
+    "automationAndIndustrial": "Automation and Industrial Solutions"
+  },
+  "homepage": {
+    "heroTitle": "We Create Professional Web Solutions",
+    "heroSubtitle": "We specialize in developing modern websites, e-shops, and applications",
+    "ctaButton": "Contact Us",
+    "learnMore": "Learn More"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "success": "Message was sent successfully!",
+    "error": "An error occurred while sending the message."
+  }
+} 
