@@ -30,8 +30,8 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Button pulled way up into text area */}
-            <div className="-mt-8 md:-mt-12 text-center md:text-left">
+            {/* Button with better mobile spacing */}
+            <div className="-mt-2 md:-mt-12 text-center md:text-left">
               <Link href="/kontakt">
                 <PaletteButton variant="secondary">{t('homepage.ctaButton')}</PaletteButton>
               </Link>
