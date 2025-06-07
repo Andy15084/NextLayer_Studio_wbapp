@@ -199,49 +199,71 @@ export default function ModernizaciaPage() {
     {
       type: 'card',
       title: t('modernization.outdatedDesign.title'),
-      content: t('modernization.outdatedDesign.content'),
+      content: t('modernization.outdatedDesign.content')
     },
     {
       type: 'text',
-      title: t('modernization.howToModernize.title'),
-      content: t('modernization.howToModernize.content'),
-      illustration: "/ako-modernizovat-webstranku.png"
+      title: t('modernization.howWeWork.title'),
+      content: t('modernization.howWeWork.content'),
+      illustration: "/ako-pracujeme.png"
     },
     {
       type: 'card',
       title: t('modernization.slowLoading.title'),
-      content: t('modernization.slowLoading.content'),
+      content: t('modernization.slowLoading.content')
     },
     {
       type: 'text',
-      title: t('modernization.designAndUX.title'),
-      content: t('modernization.designAndUX.content'),
-      illustration: "/dizajn-a-ux.png"
+      title: t('modernization.modernTech.title'),
+      content: t('modernization.modernTech.content'),
+      illustration: "/moderne-technologie.png"
     },
     {
       type: 'card',
+      title: t('modernization.poorMobile.title'),
+      content: t('modernization.poorMobile.content')
+    },
+    {
+      type: 'text',
       title: t('modernization.seoOptimization.title'),
       content: t('modernization.seoOptimization.content'),
-    },
-    {
-      type: 'text',
-      title: t('modernization.ourApproach.title'),
-      content: t('modernization.ourApproach.content'),
-      illustration: "/nas-pristup.png"
+      illustration: "/seo-optimalizacia-modernizacia.png"
     },
     {
       type: 'card',
-      title: t('modernization.mobileResponsiveness.title'),
-      content: t('modernization.mobileResponsiveness.content'),
+      title: t('modernization.lackingSEO.title'),
+      content: t('modernization.lackingSEO.content')
+    },
+    {
+      type: 'text',
+      title: t('modernization.userExperience.title'),
+      content: t('modernization.userExperience.content'),
+      illustration: "/user-experience.png"
+    },
+    {
+      type: 'card',
+      title: t('modernization.complexNavigation.title'),
+      content: t('modernization.complexNavigation.content')
+    },
+    {
+      type: 'text',
+      title: t('modernization.security.title'),
+      content: t('modernization.security.content'),
+      illustration: "/bezpecnost.png"
+    },
+    {
+      type: 'card',
+      title: t('modernization.securityVulnerabilities.title'),
+      content: t('modernization.securityVulnerabilities.content')
     }
   ];
 
   return (
-    <main className="min-h-screen p-4 sm:p-8 relative z-10" style={{ background: '#8ECAE6' }}>
+    <main className="p-4 sm:p-8 relative z-10" style={{ background: '#8ECAE6' }}>
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-8 pt-16 md:pt-24 pb-12 md:pb-20 flex flex-col md:flex-row items-center md:items-start gap-8">
         <div className="flex-1 flex flex-col items-center md:items-start justify-between px-2 md:ml-10 md:mt-10 min-h-[280px] md:min-h-[320px]">
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 leading-tight text-[#023047] text-center md:text-left whitespace-pre-line">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 leading-tight text-[#023047] text-center md:text-left">
             {t('modernization.title')}
           </h1>
           <p className="font-mono text-xl md:text-2xl text-[#023047] mb-6 text-center md:text-left max-w-2xl">
@@ -253,15 +275,21 @@ export default function ModernizaciaPage() {
         </div>
         {/* Right: Illustration */}
         <div className="flex-1 flex justify-center items-start w-full">
-          <Image src="/modernizacia-webstranky.png" alt={t('modernization.title')} width={600} height={600} className="w-full max-w-xl h-auto object-contain" />
+          <Image 
+            src="/modernizacia-webstranky.png" 
+            alt={t('modernization.title')}
+            width={600} 
+            height={600} 
+            className="w-full max-w-xl h-auto object-contain" 
+          />
         </div>
       </section>
 
-      {/* Content Sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-20 mb-20">
-        {content.map((item, index) => (
-          <AnimatedOnScroll key={index} animation="fade-up">
-            <div className="flex justify-center w-full">
+      {/* Content sections */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-8 pb-20">
+        <div className="space-y-20">
+          {content.map((item, index) => (
+            <AnimatedOnScroll key={index} animation="fade-up">
               {item.type === 'text' ? (
                 <TextSection
                   title={item.title}
@@ -279,10 +307,10 @@ export default function ModernizaciaPage() {
                   onVisibilityChange={(isVisible) => handleVisibilityChange(index, isVisible)}
                 />
               )}
-            </div>
-          </AnimatedOnScroll>
-        ))}
-      </div>
+            </AnimatedOnScroll>
+          ))}
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-8 mb-20">
