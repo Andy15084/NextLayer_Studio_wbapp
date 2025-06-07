@@ -28,5 +28,21 @@
     "send": "Send",
     "success": "Message was sent successfully!",
     "error": "An error occurred while sending the message."
+  },
+  "modernization": {
+    "title": "Website Modernization",
+    "heroTitle": "Modernize Your Website",
+    "heroSubtitle": "Transform your outdated website into a modern, fast, and user-friendly platform",
+    "ctaTitle": "Ready to Modernize Your Website?",
+    "ctaDescription": "Contact us for a free consultation and discover how we can improve your website.",
+    "ctaButton": "Get Free Consultation"
+  },
+  "automation": {
+    "title": "Automation and Industrial Solutions",
+    "heroTitle": "Automate Your Business Processes",
+    "heroSubtitle": "We create custom solutions for process automation and digitalization of industrial operations",
+    "ctaTitle": "Ready to Automate Your Processes?",
+    "ctaDescription": "Contact us to discuss your automation needs and get a custom solution proposal.",
+    "ctaButton": "Request Consultation"
   }
-} 
+}
