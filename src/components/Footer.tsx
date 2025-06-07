@@ -37,8 +37,8 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <div className="font-heading text-base sm:text-lg md:text-xl font-bold mt-4 mb-2 md:mb-4 text-white">{t('footer.contact')}</div>
-            <a href="mailto:nextlayerstudio@gmail.com" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">email: nextlayerstudio@gmail.com</a>
-            <a href="tel:0903652258" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">tel.: 0903 652 258</a>
+            <a href="mailto:team@nextlayer.studio" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">email: team@nextlayer.studio</a>
+            <a href="tel:+421902238309" className="block font-mono text-xs sm:text-sm mb-1 text-white hover:text-[#FFB703] transition-colors">tel.: +421 902 238 309</a>
           </div>
         </div>
         <div className="text-center font-mono text-xs sm:text-sm text-white mt-4 md:mt-6">

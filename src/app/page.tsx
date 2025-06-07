@@ -355,24 +355,24 @@ export default function Home() {
               
               {/* Phone */}
               <a 
-                href="tel:0903652258"
+                href="tel:+421902238309"
                 className="flex items-center gap-6 hover:opacity-70 transition-opacity"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" className="text-black">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                <span className="font-mono">0903 652 258</span>
+                <span className="font-mono">+421 902 238 309</span>
               </a>
               
               {/* Email */}
               <a 
-                href="mailto:nextlayerstudio@gmail.com" 
+                href="mailto:team@nextlayer.studio" 
                 className="flex items-center gap-6 hover:opacity-70 transition-opacity"
               >
                 <svg viewBox="0 0 24 24" width="24" height="24" className="text-black fill-current">
                   <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
                 </svg>
-                <span className="font-mono">nextlayerstudio@gmail.com</span>
+                <span className="font-mono">team@nextlayer.studio</span>
               </a>
             </div>
           </div>
