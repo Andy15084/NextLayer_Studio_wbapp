@@ -8,50 +8,50 @@ export default function PrecoMyPage() {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState<number | null>(null);
 
-  const precoMyCards = [
-    {
+const precoMyCards = [
+  {
       title: t('homepage.features.ai.title'),
       short: t('whyUs.cards.ai.short'),
       long: t('whyUs.cards.ai.long'),
-      img: '/ai.png',
-      alt: 'AI',
-    },
-    {
+    img: '/ai.png',
+    alt: 'AI',
+  },
+  {
       title: t('whyUs.cards.modern.title'),
       short: t('whyUs.cards.modern.short'),
       long: t('whyUs.cards.modern.long'),
-      img: '/moderne.png',
-      alt: 'Moderne',
-    },
-    {
+    img: '/moderne.png',
+    alt: 'Moderne',
+  },
+  {
       title: t('homepage.features.personalization.title'),
       short: t('whyUs.cards.personalization.short'),
       long: t('whyUs.cards.personalization.long'),
-      img: '/komunikacia.png',
-      alt: 'Personalizácia',
-    },
-    {
+    img: '/komunikacia.png',
+    alt: 'Personalizácia',
+  },
+  {
       title: t('homepage.features.communication.title'),
       short: t('whyUs.cards.communication.short'),
       long: t('whyUs.cards.communication.long'),
-      img: '/personalizacia.png',
-      alt: 'Komunikácia',
-    },
-    {
+    img: '/personalizacia.png',
+    alt: 'Komunikácia',
+  },
+  {
       title: t('homepage.features.seo.title'),
       short: t('whyUs.cards.seo.short'),
       long: t('whyUs.cards.seo.long'),
-      img: '/CMS.png',
-      alt: 'SEO',
-    },
-    {
+    img: '/CMS.png',
+    alt: 'SEO',
+  },
+  {
       title: t('homepage.features.cms.title'),
       short: t('whyUs.cards.cms.short'),
       long: t('whyUs.cards.cms.long'),
-      img: '/seo.png',
-      alt: 'CMS',
-    }
-  ];
+    img: '/seo.png',
+    alt: 'CMS',
+  }
+];
 
   return (
     <main className="p-4 sm:p-8 relative z-10 min-h-screen" style={{ background: '#8ECAE6' }}>

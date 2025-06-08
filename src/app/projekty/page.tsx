@@ -27,27 +27,27 @@ export default function ProjektyPage() {
       id: '1',
       title: 'KarinArt',
       description: t('homepage.projects.karinart'),
-      image: '/karinart.png',
+    image: '/karinart.png',
       category: 'webDev',
       url: 'https://karinart.sk'
-    },
-    {
+  },
+  {
       id: '2',
       title: 'NatusVolare',
       description: t('homepage.projects.natusvolare'),
-      image: '/natusvolare.png',
+    image: '/natusvolare.png',
       category: 'webDev',
       url: 'https://natusvolare.sk'
-    },
-    {
+  },
+  {
       id: '3',
       title: 'Portfolio',
       description: t('homepage.projects.portfolio'),
-      image: '/portfolio.png',
+    image: '/portfolio.png',
       category: 'webDev',
       url: 'https://andrejpaulicka.sk'
-    }
-  ];
+  }
+];
 
   const filters = [
     { key: 'all' as const, label: t('projects.filters.all') },
@@ -123,7 +123,7 @@ export default function ProjektyPage() {
         <div className="mb-16 text-left">
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-[#023047] leading-tight mb-6">
             {t('projects.title')}
-          </h1>
+        </h1>
           <div className="font-mono text-base sm:text-lg text-[#023047] max-w-3xl mb-8 space-y-4">
             <p>{t('projects.description1')}</p>
             <p>{t('projects.description2')}</p>
@@ -133,7 +133,7 @@ export default function ProjektyPage() {
         {/* Filter buttons */}
         <div className="flex flex-wrap gap-2 mb-12 justify-center">
           {filters.map((filterOption) => (
-            <button
+          <button 
               key={filterOption.key}
               onClick={() => setFilter(filterOption.key)}
               className={`px-4 py-2 rounded-lg font-mono text-sm transition-all duration-300 ${
@@ -143,23 +143,23 @@ export default function ProjektyPage() {
               }`}
             >
               {filterOption.label}
-            </button>
+          </button>
           ))}
         </div>
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {filteredProjects.map((project, index) => (
-            <AnimatedOnScroll
-              key={project.id}
+            <AnimatedOnScroll 
+              key={project.id} 
               delay={index * 200}
               className="h-full"
             >
               <FloatingCard className="bg-white rounded-2xl shadow-xl overflow-hidden transition-transform duration-300 hover:scale-105 h-full flex flex-col">
                 <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
+                  <Image 
+                    src={project.image} 
+                    alt={project.title} 
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-110"
                   />
@@ -191,7 +191,7 @@ export default function ProjektyPage() {
         <div className="mb-20">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#023047] mb-12 text-center">
             {t('projects.process.title')}
-          </h2>
+        </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {processSteps.map((step, index) => (
               <AnimatedOnScroll
@@ -203,7 +203,7 @@ export default function ProjektyPage() {
                   <div className="flex items-start gap-4 h-full">
                     <div className="bg-[#FFB703] text-[#023047] font-heading text-2xl font-bold w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
                       {step.number}
-                    </div>
+                </div>
                     <div className="flex-1">
                       <h3 className="font-heading text-xl font-bold text-[#023047] mb-3">
                         {step.title}
@@ -211,16 +211,16 @@ export default function ProjektyPage() {
                       <p className="font-mono text-sm text-gray-700">
                         {step.description}
                       </p>
-                    </div>
-                  </div>
                 </div>
-              </AnimatedOnScroll>
+                </div>
+              </div>
+            </AnimatedOnScroll>
             ))}
           </div>
-        </div>
-
+            </div>
+            
         {/* Results section */}
-        <div className="text-center">
+              <div className="text-center">
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#023047] mb-6">
             {t('projects.results.title')}
           </h2>
@@ -229,7 +229,7 @@ export default function ProjektyPage() {
           </p>
         </div>
       </section>
-
+      
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto mb-20">
         <div className="bg-[#023047] rounded-2xl shadow-xl p-12 text-center">

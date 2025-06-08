@@ -10,49 +10,49 @@ import { useTranslation } from '@/lib/TranslationContext';
 export default function AutomatizaciaPage() {
   const { t } = useTranslation();
 
-  const digitalizaciaCards = [
-    {
+const digitalizaciaCards = [
+  {
       title: t('automation.revisionCard.title'),
       description: t('automation.revisionCard.description')
-    },
-    {
+  },
+  {
       title: t('automation.inventoryCard.title'),
       description: t('automation.inventoryCard.description')
-    },
-    {
+  },
+  {
       title: t('automation.payrollCard.title'),
       description: t('automation.payrollCard.description')
-    },
-    {
+  },
+  {
       title: t('automation.documentsCard.title'),
       description: t('automation.documentsCard.description')
-    },
-    {
+  },
+  {
       title: t('automation.reportsCard.title'),
       description: t('automation.reportsCard.description')
-    }
-  ];
+  }
+];
 
-  const naMieruSteps = [
-    {
+const naMieruSteps = [
+  {
       title: t('automation.step1.title'),
       description: t('automation.step1.description')
-    },
-    {
+  },
+  {
       title: t('automation.step2.title'),
       description: t('automation.step2.description')
-    },
-    {
+  },
+  {
       title: t('automation.step3.title'),
       description: t('automation.step3.description')
-    },
-    {
+  },
+  {
       title: t('automation.step4.title'),
       description: t('automation.step4.description')
-    }
-  ];
+  }
+];
 
-  const vyhodyPoints = [
+const vyhodyPoints = [
     t('automation.benefit1'),
     t('automation.benefit2'),
     t('automation.benefit3'),
