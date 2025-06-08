@@ -221,7 +221,7 @@ export default function ModernizaciaPage() {
       type: 'text',
       title: t('modernization.techImprovements.title'),
       content: t('modernization.techImprovements.content'),
-      illustration: "/technologickevylepsenia.png"
+      illustration: "/moderne-technologie.png"
     },
     {
       type: 'card',
@@ -266,7 +266,7 @@ export default function ModernizaciaPage() {
         </div>
         {/* Right: Illustration */}
         <div className="flex-1 flex justify-center items-center w-full">
-          <Image src="/modernizaciawebstranky.png" alt="Modernizácia webstránky" width={480} height={480} className="w-full max-w-md h-auto object-contain" priority />
+          <Image src="/modernizacia-webstranky.png" alt="Modernizácia webstránky" width={480} height={480} className="w-full max-w-md h-auto object-contain" priority />
         </div>
       </section>
 

@@ -252,12 +252,12 @@ export default function Home() {
           <div className="font-heading text-lg sm:text-xl font-bold mb-2 text-black">{t('homepage.aboutValuesTitle')}</div>
           <div className="font-mono text-base sm:text-lg mb-6 md:mb-8 text-black">
             {t('homepage.aboutValues')}
-          </div>
+        </div>
           <div className="flex justify-center">
             <Link href={`/${currentLanguage}/o-nas`}>
               <PaletteButton>{t('homepage.aboutTeamButton')}</PaletteButton>
             </Link>
-          </div>
+      </div>
         </section>
 
         {/* Contact Section */}
@@ -271,7 +271,7 @@ export default function Home() {
             {/* Left: Contact Form */}
             <div>
               <ContactForm />
-            </div>
+      </div>
 
             {/* Right: Contact Info */}
             <div className="flex flex-col justify-start space-y-8 pt-8">
@@ -373,11 +373,11 @@ export default function Home() {
                   <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/>
                 </svg>
                 <span className="font-mono">team@nextlayer.studio</span>
-              </a>
-            </div>
+        </a>
+      </div>
           </div>
         </section>
-      </main>
+    </main>
     </>
   );
 } 

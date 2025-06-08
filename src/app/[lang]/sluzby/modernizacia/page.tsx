@@ -198,63 +198,56 @@ export default function ModernizaciaPage() {
     },
     {
       type: 'card',
-      title: t('modernization.outdatedDesign.title'),
-      content: t('modernization.outdatedDesign.content')
+      title: t('modernization.speedFirstImpression.title'),
+      content: t('modernization.speedFirstImpression.content')
     },
     {
       type: 'text',
-      title: t('modernization.howWeWork.title'),
-      content: t('modernization.howWeWork.content'),
-      illustration: "/ako-pracujeme.png"
+      title: t('modernization.whatIncludes.title'),
+      content: t('modernization.whatIncludes.content'),
+      illustration: "/covsetko-modernizacia-zahrna.png"
     },
     {
       type: 'card',
-      title: t('modernization.slowLoading.title'),
-      content: t('modernization.slowLoading.content')
+      title: t('modernization.simpleDesign.title'),
+      content: t('modernization.simpleDesign.content')
+    },
+    {
+      type: 'card',
+      title: t('modernization.userJourney.title'),
+      content: t('modernization.userJourney.content')
     },
     {
       type: 'text',
-      title: t('modernization.modernTech.title'),
-      content: t('modernization.modernTech.content'),
+      title: t('modernization.techImprovements.title'),
+      content: t('modernization.techImprovements.content'),
       illustration: "/moderne-technologie.png"
     },
     {
       type: 'card',
-      title: t('modernization.poorMobile.title'),
-      content: t('modernization.poorMobile.content')
-    },
-    {
-      type: 'text',
-      title: t('modernization.seoOptimization.title'),
-      content: t('modernization.seoOptimization.content'),
-      illustration: "/seo-optimalizacia-modernizacia.png"
+      title: t('modernization.mobileCompatibility.title'),
+      content: t('modernization.mobileCompatibility.content')
     },
     {
       type: 'card',
-      title: t('modernization.lackingSEO.title'),
-      content: t('modernization.lackingSEO.content')
+      title: t('modernization.modernTechSecurity.title'),
+      content: t('modernization.modernTechSecurity.content')
     },
     {
       type: 'text',
-      title: t('modernization.userExperience.title'),
-      content: t('modernization.userExperience.content'),
-      illustration: "/user-experience.png"
+      title: t('modernization.benefits.title'),
+      content: t('modernization.benefits.content'),
+      illustration: "/vyhody-modernizacie.png"
     },
     {
       type: 'card',
-      title: t('modernization.complexNavigation.title'),
-      content: t('modernization.complexNavigation.content')
-    },
-    {
-      type: 'text',
-      title: t('modernization.security.title'),
-      content: t('modernization.security.content'),
-      illustration: "/bezpecnost.png"
+      title: t('modernization.betterSeo.title'),
+      content: t('modernization.betterSeo.content')
     },
     {
       type: 'card',
-      title: t('modernization.securityVulnerabilities.title'),
-      content: t('modernization.securityVulnerabilities.content')
+      title: t('modernization.futureReady.title'),
+      content: t('modernization.futureReady.content')
     }
   ];
 
