@@ -29,20 +29,113 @@
     "success": "Message was sent successfully!",
     "error": "An error occurred while sending the message."
   },
-  "modernization": {
-    "title": "Website Modernization",
-    "heroTitle": "Modernize Your Website",
-    "heroSubtitle": "Transform your outdated website into a modern, fast, and user-friendly platform",
-    "ctaTitle": "Ready to Modernize Your Website?",
-    "ctaDescription": "Contact us for a free consultation and discover how we can improve your website.",
-    "ctaButton": "Get Free Consultation"
-  },
   "automation": {
     "title": "Automation and Industrial Solutions",
     "heroTitle": "Automate Your Business Processes",
     "heroSubtitle": "We create custom solutions for process automation and digitalization of industrial operations",
+    "digitalizationTitle": "Business Process Digitalization",
+    "digitalizationSubtitle": "Transform your manual processes into efficient digital workflows",
+    "revisionCard": {
+      "title": "Audit and Revision Systems",
+      "description": "Automated tracking and management of audits, revisions, and compliance processes with real-time reporting and notifications."
+    },
+    "inventoryCard": {
+      "title": "Inventory Management",
+      "description": "Complete digitalization of warehouse operations with barcode scanning, real-time tracking, and automated reordering."
+    },
+    "payrollCard": {
+      "title": "Payroll and HR Systems",
+      "description": "Automated payroll processing, attendance tracking, and comprehensive HR management with integrated reporting."
+    },
+    "documentsCard": {
+      "title": "Document Management",
+      "description": "Digital document workflow, automated approval processes, and secure document storage with version control."
+    },
+    "reportsCard": {
+      "title": "Reports and Analytics",
+      "description": "Automated report generation, real-time dashboards, and comprehensive business intelligence solutions."
+    },
+    "customTitle": "Custom Industrial Solutions",
+    "customIntro": "We develop tailored solutions for specific industrial needs:",
+    "step1": {
+      "title": "Analysis and Planning",
+      "description": "Thorough analysis of your current processes and design of optimal automation solution."
+    },
+    "step2": {
+      "title": "System Development",
+      "description": "Development of custom software solutions using modern technologies and industry best practices."
+    },
+    "step3": {
+      "title": "Integration and Testing",
+      "description": "Integration with existing systems and comprehensive testing to ensure reliability and performance."
+    },
+    "step4": {
+      "title": "Training and Support",
+      "description": "Complete training for your team and ongoing technical support to ensure smooth operation."
+    },
+    "benefitsTitle": "Benefits of Automation",
+    "benefit1": "Reduced manual work and human errors",
+    "benefit2": "Increased efficiency and productivity",
+    "benefit3": "Real-time data and better decision making",
+    "benefit4": "Lower operational costs and higher ROI",
     "ctaTitle": "Ready to Automate Your Processes?",
     "ctaDescription": "Contact us to discuss your automation needs and get a custom solution proposal.",
     "ctaButton": "Request Consultation"
+  },
+  "modernization": {
+    "title": "Website Modernization",
+    "heroTitle": "Modernize Your Website",
+    "heroSubtitle": "Transform your outdated website into a modern, fast, and user-friendly platform",
+    "whyModernize": {
+      "title": "Why Modernize Your Website?",
+      "content": "In todays digital world, your website is often the first contact customers have with your business. An outdated website can lose potential customers and damage your reputation. Website modernization helps you stay competitive, improve user experience, and increase conversions."
+    },
+    "outdatedDesign": {
+      "title": "Outdated Design",
+      "content": "Old design doesnt meet current standards and expectations of users. Well refresh your website with a modern, clean design that reflects current trends while maintaining your brand identity."
+    },
+    "slowLoading": {
+      "title": "Slow Loading Speed",
+      "content": "Slow websites lose visitors and negatively impact SEO rankings. We optimize code, images, and implement modern technologies to significantly improve loading speed."
+    },
+    "poorMobile": {
+      "title": "Poor Mobile Experience",
+      "content": "More than half of users browse websites on mobile devices. We ensure your website works perfectly on all devices with responsive design."
+    },
+    "lackingSEO": {
+      "title": "Lacking SEO Optimization",
+      "content": "Poor search engine visibility means lost opportunities. We implement modern SEO practices to improve your ranking in search results."
+    },
+    "complexNavigation": {
+      "title": "Complex Navigation",
+      "content": "Confusing navigation frustrates users and increases bounce rate. We simplify site structure and improve user experience."
+    },
+    "securityVulnerabilities": {
+      "title": "Security Vulnerabilities",
+      "content": "Old websites are vulnerable to security threats. We implement modern security measures to protect your website and user data."
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "content": "Our modernization process includes thorough analysis of your current website, identification of issues, design of solutions, and gradual implementation of improvements while maintaining business continuity."
+    },
+    "modernTech": {
+      "title": "Modern Technologies",
+      "content": "We use the latest web technologies and frameworks to ensure your website is fast, secure, and future-ready. This includes modern CSS, JavaScript frameworks, and optimized hosting solutions."
+    },
+    "seoOptimization": {
+      "title": "SEO Optimization",
+      "content": "As part of modernization, we implement comprehensive SEO optimization to improve your visibility in search engines and attract more organic traffic to your website."
+    },
+    "userExperience": {
+      "title": "Enhanced User Experience",
+      "content": "We focus on improving user experience through intuitive navigation, faster loading, better content organization, and optimized conversion paths."
+    },
+    "security": {
+      "title": "Security and Performance",
+      "content": "We implement the latest security protocols and performance optimizations to ensure your website is not only modern but also secure and fast."
+    },
+    "ctaTitle": "Ready to Modernize Your Website?",
+    "ctaDescription": "Contact us for a free consultation and discover how we can improve your website.",
+    "ctaButton": "Get Free Consultation"
   }
 }
