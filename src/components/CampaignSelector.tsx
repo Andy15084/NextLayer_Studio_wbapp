@@ -15,7 +15,7 @@ const onlineSections = [
     text: `Čo robíme: Krátke dynamické videá, trendové hashtagy, spolupráca s tvorcami\nVáš zisk: Virálny dosah a mladšie publikum bez nákladov na TV spot`
   },
   {
-    title: "X (Twitter)",
+    title: "X (Twitter) - @NextLayerStudi",
     text: `Čo robíme: Realtime správy, zákaznícka podpora, influencer spolupráce\nVáš zisk: Rýchla spätná väzba, šírenie noviniek a PR krízový štít`
   },
   {
