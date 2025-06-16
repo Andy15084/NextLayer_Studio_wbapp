@@ -37,7 +37,7 @@ export default function Navbar() {
   const languages = [
     { code: 'sk', name: 'SK', fullName: t('languages.slovak') },
     { code: 'de', name: 'DE', fullName: t('languages.german') },
-    { code: 'cs', name: 'CS', fullName: t('languages.czech') },
+    { code: 'cs', name: 'CZ', fullName: t('languages.czech') },
     { code: 'en', name: 'EN', fullName: t('languages.english') },
   ];
 
